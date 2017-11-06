@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { combineReducers } from 'redux';
 import rootReducer from './reducers/index.js';
+import NavBar from './components/NavBar.js'
+import Home from './containers/Home.js'
 
 const store = createStore(rootReducer);
 
