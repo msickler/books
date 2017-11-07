@@ -8,6 +8,7 @@ import Header from './components/Header.js'
 import NotFound from './components/NotFound.js'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import configureStore from './configureStore'
 
 class App extends Component {
   constructor() {

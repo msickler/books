@@ -11,7 +11,7 @@ import rootReducer from './reducers/index.js';
 import NavBar from './components/NavBar.js'
 import Home from './containers/Home.js'
 
-const store = createStore(rootReducer);
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>

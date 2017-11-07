@@ -20,5 +20,12 @@ export const getDataFailure = () => {
 }
 
 export const fetchData = () => {
-
+  return = (dispatch) => {
+    dispatch(getData())
+    getDataApi()
+      .then(([response, json]) => {
+        dispatch(getDataSuccess(json))
+      })
+      .catch((err) => console.log(err))
+  }
 }
