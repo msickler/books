@@ -1,4 +1,4 @@
-class TitlesController < ApiController
+class Api::TitlesController < ApplicationController
   def index
     @titles = Title.all
     render json: @titles
