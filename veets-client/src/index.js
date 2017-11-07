@@ -14,9 +14,8 @@ import Home from './containers/Home.js'
 const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App store={store} />
-  </Provider>,
+  <App />,
   document.getElementById('root')
-);
+)
+
 registerServiceWorker();

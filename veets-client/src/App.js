@@ -26,6 +26,7 @@ class App extends Component {
         <Router>
           <div>
             <NavBar />
+            <h1> hello </h1>
             <Switch>
               <Route exact path="/" render={(props) => (<Home store={this.props.store}/>)} />
               <Route  component={NotFound } />
