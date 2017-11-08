@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addSearchedTitle, clearSearchedTitle } from '../actions/addSearchedTitle.js';
+import { addSearchedTitle, clearSearchedTitles } from '../actions/addSearchedTitle.js';
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import TitleCard from '../components/TitleCard.js'

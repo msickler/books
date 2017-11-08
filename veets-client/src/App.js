@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar.js'
 import Home from './containers/Home.js'
-import MyShows from './containers/MyShows.js'
+import TitlesSearch from './containers/TitlesSearch.js'
+import Titles from './containers/Titles'
 import Header from './components/Header.js'
 import NotFound from './components/NotFound.js'
 import { bindActionCreators } from 'redux';
+import { addTitle } from './actions/addTitle.js';
 import { connect } from 'react-redux';
 import TitleService from './services/TitleService'
 const scrapeIt = require("scrape-it")
@@ -56,7 +58,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    addTitles: addTitles,
+    addTitle: addTitle,
   }, dispatch);
 };
 

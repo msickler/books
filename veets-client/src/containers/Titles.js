@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import { addTitle } from '../actions/addTitle';
 import React from 'react';
-import MyTitleService from '../services/MyTitleService';
+import TitleService from '../services/TitleService';
 import { bindActionCreators } from 'redux';
 import TitleCard from '../components/TitleCard';
-import TitleShow from './TitleShow'
 
 class Titles extends React.Component {
 
@@ -17,7 +16,7 @@ class Titles extends React.Component {
   }
 
   componentDidMount() {
-    MyTitleService.fetchTitles()
+    TitleService.fetchTitles()
     .then(json => json.forEach((title) => {
       var action = this.props.addTitle(title)
       console.log(this.props.store.getState())
