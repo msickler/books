@@ -1,7 +1,12 @@
-export const selectUser = (user) => {
-    console.log("You clicked on user: ", user.first);
-    return {
-        type: 'USER_SELECTED',
-        payload: user
-    }
-};
+import {GET_TITLES} from './types'
+import axios from 'axios'
+
+const API_URL = ""
+
+export function getTitles(){
+  const request = axios.get(`${API_URL}/titles`)
+  return {
+    type: GET_TITLES,
+    payload: request
+  }
+}
