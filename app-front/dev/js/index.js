@@ -11,6 +11,10 @@ import App from './components/App';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes'
 
+const KitsuAPI = require("kitsu-api");
+
+let kitsuAPI = new KitsuAPI({[api_key, version, debug]});
+
 const logger = createLogger();
 const store = createStore(
     allReducers,
