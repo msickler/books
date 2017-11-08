@@ -8,7 +8,7 @@ const TitleService = {
   },
 
   fetchTitleShow: (title) => {
-    return fetch(`${API_URL}` + title.id, {
+    return fetch(`${API_URL}/` + title.id, {
       method: "GET",
       headers: {
         "Accept": "application/vnd.api+json",

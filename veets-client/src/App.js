@@ -8,7 +8,7 @@ import Header from './components/Header.js'
 import NotFound from './components/NotFound.js'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import MyShowService from './services/MyShowService'
+import TitleService from './services/TitleService'
 const scrapeIt = require("scrape-it")
 
 class App extends Component {
@@ -21,10 +21,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-   this.props.clearMyShows();
-   MyShowService.fetchMyShows()
-   .then(json => json.forEach((myShow) => {
-     var action = this.props.addMyShow(myShow)
+   TitleService.fetchTitles()
+   .then(json => json.forEach((title) => {
+     var action = this.props.addTitle(title)
      console.log(this.props.store.getState())
    }))
   }
@@ -36,9 +35,10 @@ class App extends Component {
         <Router>
           <div>
             <NavBar />
-            <h1> hello </h1>
             <Switch>
               <Route exact path="/" render={(props) => (<Home store={this.props.store}/>)} />
+              <Route exact path="/titles" render={(props) => (<Titles store={this.props.store}/>)} />
+              <Route exact path="/titles/new" render={(props) => (<TitlesSearch store={this.props.store}/>)} />
               <Route  component={NotFound } />
             </Switch>
           </div>
