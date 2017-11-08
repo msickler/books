@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
 import NavBar from './components/NavBar.js'
 import Home from './containers/Home.js'
+import MyShows from './containers/MyShows.js'
 import Header from './components/Header.js'
 import NotFound from './components/NotFound.js'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import configureStore from './configureStore'
+import MyShowService from './services/MyShowService'
+const scrapeIt = require("scrape-it")
 
 class App extends Component {
   constructor() {
@@ -17,6 +18,15 @@ class App extends Component {
     this.state = {
       titles: []
     };
+  }
+
+  componentDidMount() {
+   this.props.clearMyShows();
+   MyShowService.fetchMyShows()
+   .then(json => json.forEach((myShow) => {
+     var action = this.props.addMyShow(myShow)
+     console.log(this.props.store.getState())
+   }))
   }
 
   render() {

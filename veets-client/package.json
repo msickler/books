@@ -18,7 +18,7 @@
      "react-router-redux": "^4.0.8",
      "react-scripts": "1.0.14",
      "redux": "^3.7.2",
-     "scrape-it": "^3.3.3",
+     "scrape-it": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
