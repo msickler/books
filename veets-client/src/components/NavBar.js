@@ -11,8 +11,14 @@ const NavBar = props => {
         exact to="/"
       >Home
       </NavLink>
-
-      </div>
+      <NavLink
+        activeClassName="btn btn-primary"
+        className="btn btn-secondary"
+        style={{ marginRight: '10px' }}
+        exact to="/titles"
+      >Anime Titles
+      </NavLink>
+    </div>
   );
 }
 
