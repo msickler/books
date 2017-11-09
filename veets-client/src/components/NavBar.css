@@ -1,0 +1,30 @@
+.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navBarLink {
+    float: left;
+}
+
+.navBarLink a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navBarLink a:hover:not(.active) {
+    background-color: gray;
+}
+
+.active {
+    background-color: gray;
+}

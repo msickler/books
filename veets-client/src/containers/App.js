@@ -7,12 +7,15 @@ import NotFound from '../components/NotFound.js'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './App.css';
+import '../components/NavBar.css';
+
 import { Button } from 'react-bootstrap';
 
 
 class App extends Component {
   render() {
     return (
+      <div className="container-fluid">
       <div className="App">
         <Header />
           <Router>
@@ -24,6 +27,7 @@ class App extends Component {
               </Switch>
             </div>
           </Router>
+      </div>
       </div>
     );
   }

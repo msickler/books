@@ -1,20 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './NavBar.css';
 
 const NavBar = props => {
   return (
-    <div style={{ borderBottom: '2px solid black' }}>
+    <div className="navBar">
       <NavLink
-        activeClassName="btn btn-primary"
-        className="btn btn-secondary"
-        style={{ marginRight: '10px' }}
+        className="navBarLink"
         exact to="/"
       >Home
       </NavLink>
       <NavLink
-        activeClassName="btn btn-primary"
-        className="btn btn-secondary"
-        style={{ marginRight: '10px' }}
+        className="navBarLink"
         exact to="/book"
       >Books
       </NavLink>

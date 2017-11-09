@@ -22,7 +22,8 @@ class BookForm extends Component {
     const { name, author, img_url, rating } = this.props.bookFormData;
 
     return (
-      <div>
+      <div className="row">
+      <div className="col-sm-8">
         Add A Book
         <form onSubmit={this.handleOnSubmit}>
           <div>
@@ -62,8 +63,9 @@ class BookForm extends Component {
             />
           </div>
 
-          <button type="submit" className="btn btn-success btn-sm">Add Book</button>
+          <button type="submit" className="btn btn-default btn-sm btn-block">Add Book</button>
         </form>
+        </div>
       </div>
     )
   }
