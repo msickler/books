@@ -16,7 +16,6 @@ const addBook = book => {
   }
 }
 
-// ** Async Actions **
 export const getBooks = () => {
   return dispatch => {
     return fetch(`${API_URL}/books`)
@@ -31,6 +30,9 @@ export const createBook = book => {
     return fetch(`${API_URL}/books`, {
       method: "POST",
       headers: {
+        'Access-Control-Allow-Origin':  'http://localhost:3001',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Headers': 'Content-Type',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ book: book })

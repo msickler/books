@@ -37,7 +37,7 @@ class BookForm extends Component {
           <div>
             <label htmlFor="author">Author:</label>
             <input
-              type="number"
+              type="text"
               onChange={this.handleOnChange}
               name="author"
               value={author}
