@@ -20,7 +20,7 @@ class App extends Component {
         <Header />
           <Router>
             <div>
-              <NavBar />
+            <NavBar />
               <Switch>
                 <Route exact path="/" component={Books} />
                 <Route  component={NotFound} />

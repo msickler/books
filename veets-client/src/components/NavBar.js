@@ -1,21 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './NavBar.css';
 
 const NavBar = props => {
   return (
-    <div className="navBar">
+    <ul className="nav navbar-nav">
+    <li>
       <NavLink
-        className="navBarLink"
+
         exact to="/"
       >Home
       </NavLink>
+      </li>
+      <li>
       <NavLink
-        className="navBarLink"
+
         exact to="/book"
       >Books
       </NavLink>
-    </div>
+      </li>
+    </ul>
   );
 }
 

@@ -23,42 +23,46 @@ class BookForm extends Component {
 
     return (
       <div className="row">
-      <div className="col-sm-8">
+      <div className="col-sm-4" style={{ margin: '20px' }}>
         Add A Book
-        <form onSubmit={this.handleOnSubmit}>
-          <div>
-            <label htmlFor="name">Name:</label>
+        <form onSubmit={this.handleOnSubmit} className="form-horizontal">
+          <div className="form-group">
+            <label htmlFor="name" className="control-label col-sm-2">Name:</label>
             <input
               type="text"
               onChange={this.handleOnChange}
               name="name"
+              className="form-control"
               value={name}
             />
           </div>
-          <div>
-            <label htmlFor="author">Author:</label>
+          <div className="form-group">
+            <label htmlFor="author" className="control-label col-sm-2">Author:</label>
             <input
               type="text"
               onChange={this.handleOnChange}
               name="author"
+              className="form-control"
               value={author}
             />
           </div>
-          <div>
-            <label htmlFor="img_url">Image Url:</label>
+          <div className="form-group">
+            <label htmlFor="img_url" className="control-label col-sm-2">Cover:</label>
             <input
               type="text"
               onChange={this.handleOnChange}
               name="img_url"
+              className="form-control"
               value={img_url}
             />
           </div>
-          <div>
-            <label htmlFor="rating">Rating:</label>
+          <div className="form-group">
+            <label htmlFor="rating" className="control-label col-sm-2">Rating:</label>
             <input
               type="number"
               onChange={this.handleOnChange}
               name="rating"
+              className="form-control"
               value={rating}
             />
           </div>
