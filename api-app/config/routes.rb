@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :titles
+    resources :books, except: [:new, :edit]
   end
 end
