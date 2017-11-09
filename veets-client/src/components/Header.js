@@ -5,10 +5,10 @@ const Header = () => {
     <div>
       <header className="App-header">
         <img src="" className="App-logo" alt="logo" />
-        <h1 className="App-title">Anime Titles</h1>
+        <h1 className="App-title">Books List</h1>
       </header>
-      <p className="well">
-        Find what you are looking for in a second.
+      <p>
+        what are you reading
       </p>
     </div>
   )

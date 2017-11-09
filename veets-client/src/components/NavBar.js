@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = props => {
   return (
-    <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px', borderTop: '2px solid black', paddingTop: '10px', marginTop: '12px' }}>
+    <div style={{ borderBottom: '2px solid black' }}>
       <NavLink
         activeClassName="btn btn-primary"
         className="btn btn-secondary"
@@ -15,8 +15,8 @@ const NavBar = props => {
         activeClassName="btn btn-primary"
         className="btn btn-secondary"
         style={{ marginRight: '10px' }}
-        exact to="/titles"
-      >Anime Titles
+        exact to="/book"
+      >Books
       </NavLink>
     </div>
   );
