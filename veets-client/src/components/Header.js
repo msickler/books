@@ -4,12 +4,9 @@ const Header = () => {
   return (
     <div>
       <header className="App-header">
-        <img src="" className="App-logo" alt="logo" />
         <h1 className="App-title">Books List</h1>
+        <p>What are you reading?</p>
       </header>
-      <p>
-        what are you reading
-      </p>
     </div>
   )
 }

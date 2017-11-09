@@ -1,9 +1,9 @@
 .BooksContainer {
-  padding: 16px;
+  padding: 10px;
 }
 .BookCard {
   float: left;
-  margin: 1.5%;
+  margin: 1%;
   background: whitesmoke;
   width: 30%;
   height: 400px;
