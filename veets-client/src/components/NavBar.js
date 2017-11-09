@@ -15,7 +15,7 @@ const NavBar = props => {
       <NavLink
 
         exact to="/book"
-      >Books
+      >Book
       </NavLink>
       </li>
     </ul>

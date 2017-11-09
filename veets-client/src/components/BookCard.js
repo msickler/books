@@ -1,6 +1,15 @@
 import React from 'react';
 
-const BookCard = ({ book }) => (
+
+
+const BookCard = ({ book,
+  handleOnClick = () => {
+      this.props.store.dispatch({
+        type: 'DELETE_BOOK',
+        id: this.props.id
+      });
+    }
+ }) => (
   <div key={book.id} className="col-sm-4 media">
   <div className="media-middle">
     <img className="media-object img-thumbnail" src={book.img_url} alt={book.name} style={{ width:'50%' }}/>
@@ -8,6 +17,7 @@ const BookCard = ({ book }) => (
       <h3 className="media-heading">{book.name}</h3>
       <p>Author: {book.author}</p>
       <p>Rating: {book.rating}</p>
+      <button onClick={this.handleOnClick}>DEL</button>
     </div>
   </div>
   <hr/>

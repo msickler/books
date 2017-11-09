@@ -15,7 +15,7 @@ class Books extends Component {
     return (
       <div className="BooksContainer">
         <h1>Books</h1>
-        {this.props.books.map(book => <BookCard key={book.id} book={book} />)}
+        {this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store}/>)}
         <BookForm />
       </div>
     );

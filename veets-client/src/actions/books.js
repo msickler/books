@@ -45,3 +45,19 @@ export const createBook = book => {
       .catch(error => console.log(error))
   }
 }
+
+export const deleteBook = book => {
+  return dispatch => {
+    return fetch(`${API_URL}/books`, {
+      method: "DELETE",
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, GET, DELETE',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ book: book })
+    })
+    .then(response => response.json())
+  }
+}

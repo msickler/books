@@ -4,6 +4,7 @@ import Books from './Books';
 import NavBar from '../components/NavBar'
 import Header from '../components/Header.js'
 import NotFound from '../components/NotFound.js'
+import BookShow from '../components/BookShow.js'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './App.css';
@@ -23,6 +24,7 @@ class App extends Component {
             <NavBar />
               <Switch>
                 <Route exact path="/" component={Books} />
+                <Route exact path="/book" component={BookShow} />
                 <Route  component={NotFound} />
               </Switch>
             </div>
