@@ -4,6 +4,9 @@ import { getBooks } from '../actions/books';
 import BookCard from './BookCard'
 
 class BookShow extends Component {
+  componentDidMount() {
+    this.props.getBooks()
+  }
 
   handleOnClick = () => {
     this.props.store.dispatch({
@@ -16,7 +19,6 @@ class BookShow extends Component {
     return (
       <li>
         <button onClick={this.handleOnClick}>Delete</button>
-        <BookCard key={book.id} book={book} id={book.id} store={this.props.store}/>
       </li>
     );
   }

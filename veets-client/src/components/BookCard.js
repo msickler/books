@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 const BookCard = ({ book,
   handleOnClick = () => {
       this.props.store.dispatch({

@@ -27,11 +27,12 @@ class Api::BooksController < ApplicationController
   end
 
   def destroy
-    if @book.destroy
-      render status: 204
-    else
-      render json: { message: "Unable to remove this book" }, status: 400
-    end
+   @book = Book.find(book_params[:id])
+   if @book.destroy
+     render json: { message: "Deleted" }
+   else
+     render json: { errors: { message: "The Book Failed to Destroy" }}
+   end
   end
 
   private
@@ -41,7 +42,7 @@ class Api::BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:name, :author, :img_url, :rating)
+      params.require(:book).permit(:id, :name, :author, :img_url, :rating)
     end
 
 end
