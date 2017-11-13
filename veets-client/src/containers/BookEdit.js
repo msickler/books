@@ -42,45 +42,55 @@ class BookEdit extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleOnSubmit.bind(this)} >
-          <input className=""
+      <div className="row">
+      <div className="centered-col form-title">
+      <br/>
+        Edit Book
+        <form onSubmit={this.handleOnSubmit.bind(this)} className="form-horizontal">
+        <div className="form-group">
+        <label htmlFor="id" className="control-label col-sm-2 book-form">#:</label>
+          <input className="form-control"
             name="id"
             type="text"
             onChange={this.handleOnChange}
-            placeholder="Book Id"
             value={this.state.id}/>
-
-          <input className=""
+            </div>
+          <div className="form-group">
+          <label htmlFor="name" className="control-label col-sm-2 book-form">Name:</label>
+          <input className="form-control"
             name="name"
             type="text"
             onChange={this.handleOnChange}
-            placeholder="Book name"
             value={this.state.name}/>
-
-          <input className=""
+            </div>
+            <div className="form-group">
+            <label htmlFor="author" className="control-label col-sm-2 book-form">Author:</label>
+          <input className="form-control"
             name="author"
             type="text"
             onChange={this.handleOnChange}
-            placeholder="Author"
             value={this.state.author}/>
-
-          <input className=""
+            </div>
+            <div className="form-group">
+            <label htmlFor="img_url" className="control-label col-sm-2 book-form">Cover:</label>
+          <input className="form-control"
             name="img_url"
             type="text"
             onChange={this.handleOnChange}
-            placeholder="Image_url"
             value={this.state.img_url}/>
-
-            <input className=""
+            </div>
+            <div className="form-group">
+            <label htmlFor="rating" className="control-label col-sm-2 book-form">Rating:</label>
+            <input className="form-control"
               name="rating"
               type="number"
               onChange={this.handleOnChange}
-              placeholder="Rating"
               value={this.state.rating}/>
-          <br></br>
-          <input className="" style={{background: '#ccc'}} type="submit" value="Edit Book" />
+            </div>
+          <input className="btn btn-default btn-sm buttons" type="submit" value="Edit Book" />
         </form>
+        <hr/>
+        </div>
       </div>
     );
   }

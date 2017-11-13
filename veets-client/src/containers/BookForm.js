@@ -24,7 +24,8 @@ class BookForm extends Component {
     return (
       <div className="row">
       <div className="centered-col form-title">
-        Add A Book
+      <br/>
+        Add Book
         <form onSubmit={this.handleOnSubmit} className="form-horizontal">
           <div className="form-group">
             <label htmlFor="name" className="control-label col-sm-2 book-form">Name:</label>
@@ -66,9 +67,9 @@ class BookForm extends Component {
               value={rating}
             />
           </div>
-
           <button type="submit" className="btn btn-default btn-sm buttons">Add</button>
         </form>
+        <hr/>
         </div>
       </div>
     )

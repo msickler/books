@@ -29,17 +29,22 @@ class BookDelete extends Component {
 
    render() {
      return (
-       <div>
-         <form  onSubmit={this.handleOnSubmit.bind(this)} >
+       <div className="row">
+       <div className="centered-col form-title">
+         Delete something?
+         <form className="form-horizontal" onSubmit={this.handleOnSubmit.bind(this)} >
+         <div className="form-group">
            <input className=""
              name="id"
              type="text"
              onChange={this.handleOnChange}
-             placeholder="Book Id"
+             placeholder="Book #:"
              value={this.state.id}/>
-           <br></br>
-           <input className="" style={{background: '#ccc'}} type="submit" value="Delete Book" />
+             </div>
+           <input className="btn btn-default btn-sm buttons" type="submit" value="Delete Book" />
          </form>
+         <hr/>
+         </div>
        </div>
      );
    }

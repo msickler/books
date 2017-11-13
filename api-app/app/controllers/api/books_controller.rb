@@ -18,22 +18,22 @@ class Api::BooksController < ApplicationController
     render json: @book
   end
 
-  def update
-   @book = Book.find(book_params[:id])
-   if book.update(book_params)
-     render json: Book.all, status:201
-   else
-     render json: {}, status: 400
-   end
- end
-
   #def update
-  #  if @book.update(book_params)
-  #    render json: @book
-  #  else
-  #    render json: { message: @book.errors }, status: 400
-  #  end
-  #end
+  # @book = Book.find(book_params[:id])
+   #if book.update(book_params)
+    # render json: Book.all, status:201
+   #else
+    # render json: {}, status: 400
+   #end
+ #end
+
+  def update
+    if @book.update(book_params)
+      render json: Book.all, status:201
+    else
+      render json: { message: @book.errors }, status: 400
+    end
+  end
 
   def destroy
    @book = Book.find(book_params[:id])

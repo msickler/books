@@ -31,11 +31,8 @@ class Books extends Component {
           {this.props.children}
         </div>
         <BookForm />
-        <label><strong>To Edit: </strong>Enter Book Id and click Edit Book:
-              <BookEdit /></label>
-              <br></br>
-        <label><strong>To Delete: </strong>Enter Delete Id:
-              <BookDelete /></label>
+        <BookEdit />
+        <BookDelete />
       </div>
     );
   }
