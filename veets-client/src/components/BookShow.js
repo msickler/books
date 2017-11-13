@@ -2,22 +2,44 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getBooks } from '../actions/books';
 import { deleteBook } from '../actions/books';
-
 import BookCard from './BookCard'
+import Books from '../containers/Books'
 
-const BookShow = ({ book }) =>
-  <div className="col-md-8">
-    <h2>{book.name}</h2>
-    <p>{book.rating}</p>
-  </div>;
+class BookShow extends Component {
+  componentDidMount() {
+    this.props.getBooks()
+  }
 
-const mapStateToProps = (state, ownProps) => {
-  const book = state.books.find(book => book.id === ownProps.match.params.bookId)
-  if (book) {
-    return {book}
-  } else {
-    return { book: {} }
+  handleOnClick = () => {
+    this.props.store.dispatch({
+      type: 'DELETE_BOOK',
+      id: this.props.id
+    })
+  }
+
+  render() {
+    const books = this.props.books
+    const book = this.props.books.filter(book => book.id == this.props.location.pathname[7])
+    //filter( b => b.id == this.props.params.id)[0]
+    return (
+
+      <div>
+      <h1> hello </h1>
+      {books}
+        <img src={book.img_url} />
+        <p className="">{book.name}</p>
+        <p className="">{book.rating}</p>
+      </div>
+    );
   }
 };
 
-export default connect(mapStateToProps)(BookShow);
+const mapStateToProps = (state) => {
+  return ({
+    books: state.books
+  })
+}
+
+
+
+export default connect(mapStateToProps, { getBooks })(BookShow);

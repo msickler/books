@@ -11,8 +11,8 @@ import './App.css';
 import '../components/NavBar.css';
 
 class App extends Component {
+
   render() {
-    const {match} = this.props
     return (
       <div className="container-fluid">
       <div className="App">
@@ -22,9 +22,7 @@ class App extends Component {
             <NavBar />
               <Switch>
                 <Route exact path="/" component={Books} />
-                <Route  component={NotFound} />
-                <Route path='/books' component={Books}/>
-                <Route path={`${match.url}/books/:bookId`} component={BookShow}/>
+                <Route path="/books/:id" component={BookShow}/>
               </Switch>
             </div>
           </Router>

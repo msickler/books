@@ -44,6 +44,22 @@ export const createBook = book => {
   }
 }
 
+const setBook = book => {
+  return {
+    type: 'GET_BOOK_SUCCESS',
+    book
+  }
+}
+
+export const getBook = (id) => {
+  return dispatch => {
+    return fetch(`${API_URL}/books/${id}`)
+      .then(response => response.json())
+      .then(book => dispatch(setBook(book)))
+      .catch(error => console.log(error));
+  }
+}
+
 //export const deleteBook = book => {
 //  return dispatch => {
 //    return fetch(`${API_URL}/books`, {
