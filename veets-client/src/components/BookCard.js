@@ -9,15 +9,13 @@ const BookCard = ({ book,
       });
     }
  }) => (
-  <div key={book.id} className="col-sm-4 media">
-  <div className="media-middle">
-    <img className="media-object img-thumbnail" src={book.img_url} alt={book.name} style={{ width:'50%' }}/>
-    <div className="media-body">
-      <h3 className="media-heading">{book.name}</h3>
+  <div key={book.id} className="centered-col media">
+  <div className="centered-col">
+    <img className="img-thumbnail" src={book.img_url} alt={book.name} style={{ width:'50%' }}/>
+      <h3 className="">{book.name}</h3>
       <p>Author: {book.author}</p>
       <p>Rating: {book.rating}</p>
-      <button onClick={this.handleOnClick}>DEL</button>
-    </div>
+      <button className="btn btn-default btn-xs" onClick={this.handleOnClick}>delete</button>
   </div>
   <hr/>
   </div>

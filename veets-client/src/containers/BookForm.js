@@ -23,7 +23,7 @@ class BookForm extends Component {
 
     return (
       <div className="row">
-      <div className="col-sm-4" style={{ margin: '20px' }}>
+      <div className="centered-col">
         Add A Book
         <form onSubmit={this.handleOnSubmit} className="form-horizontal">
           <div className="form-group">
@@ -67,7 +67,7 @@ class BookForm extends Component {
             />
           </div>
 
-          <button type="submit" className="btn btn-default btn-sm btn-block">Add Book</button>
+          <button type="submit" className="btn btn-default btn-sm">Add</button>
         </form>
         </div>
       </div>

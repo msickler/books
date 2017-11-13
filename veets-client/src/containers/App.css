@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -16,4 +17,9 @@
 
 .App-intro {
   font-size: large;
+}
+
+.centered-col {
+  margin: auto;
+  max-width: 500px;
 }

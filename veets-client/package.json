@@ -2,6 +2,7 @@
   "name": "veets-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "npm": "^5.5.1",
     "es6-promise": "^4.1.1",

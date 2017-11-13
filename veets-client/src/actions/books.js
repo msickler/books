@@ -30,9 +30,7 @@ export const createBook = book => {
     return fetch(`${API_URL}/books`, {
       method: "POST",
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
+
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ book: book })
@@ -51,9 +49,7 @@ export const deleteBook = book => {
     return fetch(`${API_URL}/books`, {
       method: "DELETE",
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, GET, DELETE',
-        'Access-Control-Allow-Headers': 'Content-Type',
+
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ book: book })
