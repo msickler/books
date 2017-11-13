@@ -6,6 +6,9 @@ import { getBooks } from '../actions/books';
 import './Books.css';
 
 class Books extends Component {
+  handleDelete(id) {
+    this.props.handleDelete(id);
+}
 
   componentDidMount() {
     this.props.getBooks()
@@ -14,7 +17,7 @@ class Books extends Component {
   render() {
     return (
       <div className="BooksContainer">
-        {this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store}/>)}
+        {this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
         <BookForm />
       </div>
     );

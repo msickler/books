@@ -44,16 +44,36 @@ export const createBook = book => {
   }
 }
 
-export const deleteBook = book => {
-  return dispatch => {
-    return fetch(`${API_URL}/books`, {
-      method: "DELETE",
-      headers: {
+//export const deleteBook = book => {
+//  return dispatch => {
+//    return fetch(`${API_URL}/books`, {
+//      method: "DELETE",
+//      headers: {
 
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ book: book })
-    })
-    .then(response => response.json())
-  }
-}
+  //      'Content-Type': 'application/json'
+  //    },
+  //    body: JSON.stringify({ book: book })
+  //  })
+  //  .then(response => response.json())
+  //}
+//}
+
+export function deleteBook(id) {
+   return (dispatch) => {
+     dispatch({ type: 'DELETE_BOOK' });
+     return fetch(`/api/books/${id}`, {
+       method:'DELETE',
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify({
+         id: id
+       })
+     })
+     .then((res) => res.json())
+     .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_DELETED_BOOK', payload: responseJson})
+       return responseJson;
+     })
+   }
+ }

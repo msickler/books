@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getBooks } from '../actions/books';
+import { deleteBook } from '../actions/books';
+
 import BookCard from './BookCard'
 
-class BookShow extends Component {
-  componentDidMount() {
-    this.props.getBooks()
-  }
+const BookShow = ({ book }) =>
+  <div className="col-md-8">
+    <h2>{book.name}</h2>
+    <p>{book.rating}</p>
+  </div>;
 
-  handleOnClick = () => {
-    this.props.store.dispatch({
-      type: 'DELETE_BOOK',
-      id: this.props.id
-    })
-  }
-
-  render() {
-    return (
-      <li>
-        <button onClick={this.handleOnClick}>Delete</button>
-      </li>
-    );
+const mapStateToProps = (state, ownProps) => {
+  const book = state.books.find(book => book.id === ownProps.match.params.bookId)
+  if (book) {
+    return {book}
+  } else {
+    return { book: {} }
   }
 };
 
-export default BookShow;
+export default connect(mapStateToProps)(BookShow);
