@@ -23,11 +23,11 @@ class BookForm extends Component {
 
     return (
       <div className="row">
-      <div className="centered-col">
+      <div className="centered-col form-title">
         Add A Book
         <form onSubmit={this.handleOnSubmit} className="form-horizontal">
           <div className="form-group">
-            <label htmlFor="name" className="control-label col-sm-2">Name:</label>
+            <label htmlFor="name" className="control-label col-sm-2 book-form">Name:</label>
             <input
               type="text"
               onChange={this.handleOnChange}
@@ -37,7 +37,7 @@ class BookForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="author" className="control-label col-sm-2">Author:</label>
+            <label htmlFor="author" className="control-label col-sm-2 book-form">Author:</label>
             <input
               type="text"
               onChange={this.handleOnChange}
@@ -47,7 +47,7 @@ class BookForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="img_url" className="control-label col-sm-2">Cover:</label>
+            <label htmlFor="img_url" className="control-label col-sm-2 book-form">Cover:</label>
             <input
               type="text"
               onChange={this.handleOnChange}
@@ -57,7 +57,7 @@ class BookForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="rating" className="control-label col-sm-2">Rating:</label>
+            <label htmlFor="rating" className="control-label col-sm-2 book-form">Rating:</label>
             <input
               type="number"
               onChange={this.handleOnChange}
@@ -67,7 +67,7 @@ class BookForm extends Component {
             />
           </div>
 
-          <button type="submit" className="btn btn-default btn-sm">Add</button>
+          <button type="submit" className="btn btn-default btn-sm buttons">Add</button>
         </form>
         </div>
       </div>

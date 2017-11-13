@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Crimson+Text|Reenie+Beanie');
+
 .App {
   text-align: center;
   margin: 0 auto;
@@ -15,6 +17,16 @@
   color: white;
 }
 
+.App-title {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 4em;
+}
+
+.App-subtitle {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2em;
+}
+
 .App-intro {
   font-size: large;
 }
@@ -22,4 +34,27 @@
 .centered-col {
   margin: auto;
   max-width: 500px;
+}
+
+.book-title {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+}
+
+.book-form {
+  font-family: 'Amatic SC', cursive;
+}
+
+.form-control {
+  max-width: 400px;
+  font-family: Arial;
+}
+
+.form-title {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 1.7em;
+}
+
+.buttons {
+  font-family: Arial;
 }
