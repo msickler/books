@@ -91,3 +91,27 @@ export function deleteBook(id) {
      })
    }
  }
+
+ export function editBook(book) {
+    return (dispatch) => {
+      dispatch({ type: 'EDIT_BOOK' });
+      return fetch(`${API_URL}/books/${book.id}`, {
+        method:'PATCH',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: book.id,
+          name: book.name,
+          author: book.author,
+          img_url: book.img_url,
+          rating: book.rating
+        })
+      })
+      .then((res) => res.json())
+      .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_EDITED_BOOK', payload: responseJson })
+      return responseJson;
+      })
+    }
+  }

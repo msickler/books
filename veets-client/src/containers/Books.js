@@ -5,6 +5,7 @@ import BookForm from './BookForm';
 import { getBooks } from '../actions/books';
 import './Books.css';
 import BookDelete from './BookDelete'
+import BookEdit from './BookEdit';
 import * as actions from '../actions/books.js'
 import { bindActionCreators } from 'redux'
 
@@ -30,6 +31,9 @@ class Books extends Component {
           {this.props.children}
         </div>
         <BookForm />
+        <label><strong>To Edit: </strong>Enter Book Id and click Edit Book:
+              <BookEdit /></label>
+              <br></br>
         <label><strong>To Delete: </strong>Enter Delete Id:
               <BookDelete /></label>
       </div>
