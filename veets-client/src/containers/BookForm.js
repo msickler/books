@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateBookFormData } from '../actions/bookForm';
 import { createBook } from '../actions/books';
+import Scroll from 'react-scroll'; // Imports all Mixins
+import {scroller} from 'react-scroll'; //Imports scroller mixin, can use as scroller.scrollTo()
+let Element    = Scroll.Element;
 
 class BookForm extends Component {
 
@@ -22,11 +25,12 @@ class BookForm extends Component {
     const { name, author, img_url, rating } = this.props.bookFormData;
 
     return (
+      <Element name="bookForm" className="element">
       <div className="row">
       <div className="centered-col form-title">
       <br/>
         Add Book
-        <form onSubmit={this.handleOnSubmit} className="form-horizontal">
+        <form onSubmit={this.handleOnSubmit} className="form-horizontal" name="firstInsideContainer">
           <div className="form-group">
             <label htmlFor="name" className="control-label col-sm-2 book-form">Name:</label>
             <input
@@ -72,6 +76,7 @@ class BookForm extends Component {
         <hr/>
         </div>
       </div>
+      </Element>
     )
   }
 }

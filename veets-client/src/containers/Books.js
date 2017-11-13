@@ -30,7 +30,7 @@ class Books extends Component {
         <div className="col-md-8">
           {this.props.children}
         </div>
-        <BookForm />
+        <BookForm id="BookForm"/>
         <BookEdit />
         <BookDelete />
       </div>

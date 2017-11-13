@@ -1,6 +1,14 @@
 import React from 'react';
 import './NavBar.css';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import BookForm from '../containers/BookForm';
+import Scroll from 'react-scroll'; // Imports all Mixins
+import {scroller} from 'react-scroll';
+import Section from './Section'
+
+
 
 const NavBar = props => {
   return (
@@ -16,6 +24,9 @@ const NavBar = props => {
         exact to="/about"
       >About
       </NavLink>
+      </li>
+      <li className="navBarLink">
+      <Section />
       </li>
     </ul>
   );

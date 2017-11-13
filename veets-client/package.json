@@ -15,10 +15,17 @@
     "react-redux": "^5.0.5",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-router-hash-scroll": "^0.2.7",
     "react-router-redux": "^4.0.8",
     "react-scripts": "^1.0.17",
+    "react-scroll": "^1.6.4",
+    "react-scrollchor": "^4.0.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=0.14.7 || >15.0.0-rc",
+    "react-router": "2.x.x"
   },
   "devDependencies": {
     "react-scripts-ts": "1.4.0",
