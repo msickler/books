@@ -28,11 +28,16 @@ class Api::BooksController < ApplicationController
 
   def destroy
    @book = Book.find(book_params[:id])
-   if @book.destroy
-     render json: { message: "Deleted" }
-   else
-     render json: { errors: { message: "The Book Failed to Destroy" }}
-   end
+   if @book.delete
+      render json: Book.all, status: 412
+    else
+      render json: { message: "book deleted", success: 'ok'}
+    end
+   #if @book.destroy
+    # render json: { message: "Deleted" }
+   #else
+    # render json: { errors: { message: "The Book Failed to Destroy" }}
+   #end
   end
 
   private

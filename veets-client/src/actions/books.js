@@ -77,7 +77,7 @@ export const getBook = (id) => {
 export function deleteBook(id) {
    return (dispatch) => {
      dispatch({ type: 'DELETE_BOOK' });
-     return fetch(`${API_URL}/books` + id, {
+     return fetch(`${API_URL}/books/${id}`, {
        method:'DELETE',
        headers: {
          'Accept': 'application/json',

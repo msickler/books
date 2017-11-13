@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteBook } from '../actions/books';
 import { bindActionCreators } from 'redux'
+import * as actions from '../actions/books'
+
 
 class BookDelete extends Component {
   constructor (props) {
@@ -21,29 +23,30 @@ class BookDelete extends Component {
    handleOnSubmit = (event) => {
      event.preventDefault();
      let id = parseInt(this.state.id, 10)
-     this.props.store.deleteBook(id)
+     this.props.actions.deleteBook(id)
      this.setState({id: ""})
    }
 
-  render() {
-    return (
-      <div>
-        <form  onSubmit={this.handleOnSubmit.bind(this)} >
-          <input className="App-form"
-            name="id"
-            type="text"
-            onChange={this.handleOnChange}
-            placeholder="Delete Id"
-            value={this.state.id}/>
-          <br></br>
-          <input className="" type="submit" value="Delete Book" />
-        </form>
-      </div>
-    );
-  }
-}
+   render() {
+     return (
+       <div>
+         <form  onSubmit={this.handleOnSubmit.bind(this)} >
+           <input className=""
+             name="id"
+             type="text"
+             onChange={this.handleOnChange}
+             placeholder="Book Id"
+             value={this.state.id}/>
+           <br></br>
+           <input className="" style={{background: '#ccc'}} type="submit" value="Delete Book" />
+         </form>
+       </div>
+     );
+   }
+ }
 
-//function mapDispatchToProps(dispatch) {{bindActionCreators(actions, dispatch)}
-//}
+ function mapDispatchToProps(dispatch) {
+   return {actions: bindActionCreators(actions, dispatch)}
+ }
 
-export default connect(null, mapDispatchToProps)(BookDelete);
+ export default connect(null, mapDispatchToProps)(BookDelete);

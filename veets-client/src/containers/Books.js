@@ -4,36 +4,41 @@ import BookCard from '../components/BookCard';
 import BookForm from './BookForm';
 import { getBooks } from '../actions/books';
 import './Books.css';
+import BookDelete from './BookDelete'
+import * as actions from '../actions/books.js'
+import { bindActionCreators } from 'redux'
 
 class Books extends Component {
-  handleDelete(id) {
-    this.props.handleDelete(id);
-}
+  constructor(props) {
+   super(props);
 
-handleOnClick() {
-  debugger
-  this.props.store.dispatch({
-        type: 'DELETE_BOOK',
-        id: this.props.id
-      });
-}
+   this.state = {
+     books: []
+   }
+ }
 
   componentDidMount() {
-    this.props.getBooks()
+    this.props.actions.getBooks()
   }
 
   render() {
-    const books = this.props.books;
+    const { match } = this.props
     return (
       <div className="BooksContainer">
-        {this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} onClick={this.handleOnClick.bind(this)} store={this.props.store} />)}
+        {this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
         <div className="col-md-8">
           {this.props.children}
         </div>
         <BookForm />
+        <label><strong>To Delete: </strong>Enter Delete Id:
+              <BookDelete /></label>
       </div>
     );
   }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
 }
 
 const mapStateToProps = (state) => {
@@ -42,4 +47,4 @@ const mapStateToProps = (state) => {
   })
 }
 
- export default connect(mapStateToProps, { getBooks })(Books);
+ export default connect(mapStateToProps, mapDispatchToProps)(Books);
