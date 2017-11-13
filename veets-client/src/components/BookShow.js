@@ -1,45 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getBooks } from '../actions/books';
 import { deleteBook } from '../actions/books';
 import BookCard from './BookCard'
 import Books from '../containers/Books'
 
-class BookShow extends Component {
-  componentDidMount() {
-    this.props.getBooks()
-  }
-
-  handleOnClick = () => {
-    this.props.store.dispatch({
-      type: 'DELETE_BOOK',
-      id: this.props.id
-    })
-  }
-
+class BookShow extends React.Component {
   render() {
-    const books = this.props.books
-    const book = this.props.books.filter(book => book.id == this.props.location.pathname[7])
-    //filter( b => b.id == this.props.params.id)[0]
     return (
-
-      <div>
-      <h1> hello </h1>
-      {books}
-        <img src={book.img_url} />
-        <p className="">{book.name}</p>
-        <p className="">{book.rating}</p>
+      <div className="col-md-8 col-md-offset-2">
+        <h1>{this.props.book.name}</h1>
+        <p>author: {this.props.book.author}</p>
+        <p>img_url: {this.props.book.img_url}</p>
+        <p>rating: {this.props.book.rating}</p>
       </div>
     );
   }
 };
 
-const mapStateToProps = (state) => {
-  return ({
-    books: state.books
-  })
-}
+BookShow.propTypes = {
+  book: PropTypes.object.isRequired
+};
 
 
+function mapStateToProps(state, ownProps) {
+  let book = {name: '', author: '', img_url: '', rating: ''};
+  debugger
+  const id = ownProps.params.id;
+  if (state.books.length > 0) {
+    book = Object.assign({}, state.books.find(book => book.id == id))
+  }
+  return {book: book};
+};
 
-export default connect(mapStateToProps, { getBooks })(BookShow);
+export default connect(mapStateToProps)(BookShow);

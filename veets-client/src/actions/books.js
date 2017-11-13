@@ -77,15 +77,13 @@ export const getBook = (id) => {
 export function deleteBook(id) {
    return (dispatch) => {
      dispatch({ type: 'DELETE_BOOK' });
-     return fetch(`/api/books/${id}`, {
+     return fetch(`${API_URL}/books` + id, {
        method:'DELETE',
        headers: {
          'Accept': 'application/json',
          'Content-Type': 'application/json'
        },
-       body: JSON.stringify({
-         id: id
-       })
+       body: JSON.stringify({ id: id })
      })
      .then((res) => res.json())
      .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_DELETED_BOOK', payload: responseJson})

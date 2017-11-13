@@ -19,6 +19,7 @@ const BookCard = ({ book,
       </h3>
       <p>Author: {book.author}</p>
       <p>Rating: {book.rating}</p>
+      <button onClick={this.handleOnClick} className="btn btn-default">delete</button>
   </div>
   <hr/>
   </div>

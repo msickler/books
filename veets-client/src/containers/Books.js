@@ -10,14 +10,26 @@ class Books extends Component {
     this.props.handleDelete(id);
 }
 
+handleOnClick() {
+  debugger
+  this.props.store.dispatch({
+        type: 'DELETE_BOOK',
+        id: this.props.id
+      });
+}
+
   componentDidMount() {
     this.props.getBooks()
   }
 
   render() {
+    const books = this.props.books;
     return (
       <div className="BooksContainer">
-        {this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
+        {this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} onClick={this.handleOnClick.bind(this)} store={this.props.store} />)}
+        <div className="col-md-8">
+          {this.props.children}
+        </div>
         <BookForm />
       </div>
     );
