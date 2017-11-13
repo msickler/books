@@ -26,6 +26,7 @@ class BookForm extends Component {
 
     return (
       <Element name="bookForm" className="element">
+      <br/><br/>
       <div className="row">
       <div className="centered-col form-title">
       <br/>
@@ -73,6 +74,7 @@ class BookForm extends Component {
           </div>
           <button type="submit" className="btn btn-default btn-sm buttons">Add</button>
         </form>
+        <br/>
         <hr/>
         </div>
       </div>

@@ -45,6 +45,7 @@ var Section = React.createClass({
   render: function () {
   	return (
       <div>
+        <a href="/" className="navBarLink" onClick={this.scrollToTop}>Home</a>
         <Link className="navBarLink" to="bookForm" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}>
           Add
         </Link>
@@ -54,7 +55,6 @@ var Section = React.createClass({
         <Link className="navBarLink" to="bookDelete" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}>
           Delete
         </Link>
-        <a className="navBarLink" onClick={this.scrollToTop}>Up</a>
         <a className="navBarLink" onClick={this.scrollToBottom}>Down</a>
         </div>
 	);
