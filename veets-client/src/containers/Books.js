@@ -14,22 +14,33 @@ class Books extends Component {
    super(props);
 
    this.state = {
-     books: []
+     books: [],
+     searchTerm: '',
+     newlyDisplayed: [],
+     currentlyDisplayed: this.props.books
    }
+   this.onInputChange = this.onInputChange.bind(this)
+ }
+
+ onInputChange(event) {
+   let newlyDisplayed = this.props.books.filter(book => book.name.toLowerCase().includes(event.target.value.toLowerCase()))
+   this.setState({
+     searchTerm: event.target.value,
+     currentlyDisplayed: newlyDisplayed
+   })
  }
 
   componentDidMount() {
     this.props.actions.getBooks()
   }
 
-  handleFilter() {
-    this.props.books.filter(b => b.completed === "yes")
-  }
-
   render() {
     return (
       <div className="BooksContainer">
-        {this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
+      <div className="">
+      <input type="text" placeholder="Search" onChange={this.onInputChange}/>
+      </div>
+        {this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
         <div className="col-md-8">
         </div>
         <BookForm />
