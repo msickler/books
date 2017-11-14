@@ -11,3 +11,4 @@
   Book.create(name: 'LOTR The Return of the King', author: 'JRR Tolkien', img_url: 'https://images-na.ssl-images-amazon.com/images/I/41fHC5yiRgL._SY445_QL70_.jpg', rating: 10)
   Book.create(name: 'The Hobbit', author: 'JRR Tolkien', img_url: 'http://media.npr.org/assets/bakertaylor/covers/t/the-hobbit-or-there-and-back-again/9780547928227_custom-857f136943cab96fc9f592815e91f1a915ec292a-s400-c85.jpg', rating: 9)
   Book.create(name: 'The Silmarillion', author: 'JRR Tolkien', img_url: 'http://theotherpress.ca/wp-content/uploads/2015/09/ARTS_The-Silmarillion.jpg', rating: 10)
+  Book.create(name: 'The Silmarillion', author: 'JRR Tolkien', img_url: 'http://theotherpress.ca/wp-content/uploads/2015/09/ARTS_The-Silmarillion.jpg', rating: 10, completed: 'yes')

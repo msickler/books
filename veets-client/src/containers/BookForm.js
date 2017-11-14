@@ -22,7 +22,7 @@ class BookForm extends Component {
   }
 
   render() {
-    const { name, author, img_url, rating } = this.props.bookFormData;
+    const { name, author, img_url, rating, completed } = this.props.bookFormData;
 
     return (
       <Element name="bookForm" className="element">
@@ -70,6 +70,17 @@ class BookForm extends Component {
               name="rating"
               className="form-control"
               value={rating}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="completed" className="control-label col-sm-2 book-form">Completed:</label>
+            <input
+              type="text"
+              onChange={this.handleOnChange}
+              name="completed"
+              className="form-control"
+              placeholder="Yes/No"
+              value={completed}
             />
           </div>
           <button type="submit" className="btn btn-default btn-sm buttons">Add</button>

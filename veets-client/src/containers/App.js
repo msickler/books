@@ -4,9 +4,9 @@ import Books from './Books';
 import NavBar from '../components/NavBar'
 import Section from '../components/Section'
 import Header from '../components/Header.js'
+import Footer from '../components/Footer'
 import NotFound from '../components/NotFound.js'
 import About from '../components/About.js'
-import BookShow from '../components/BookShow.js'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './App.css';
@@ -25,10 +25,11 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Books} />
                 <Route exact path='/about' component={About}/>
-                <Route path="/books/:id" component={BookShow}/>
                 <Route component={NotFound} />
               </Switch>
+              <Footer />
             </div>
+
           </Router>
       </div>
       </div>

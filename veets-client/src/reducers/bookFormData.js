@@ -2,7 +2,8 @@ const initialState = {
   name: '',
   author: '',
   img_url: '',
-  rating: 0
+  rating: 0,
+  completed: ''
 }
 
 export default (state = initialState, action) => {

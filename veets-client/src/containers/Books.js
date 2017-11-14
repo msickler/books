@@ -22,13 +22,15 @@ class Books extends Component {
     this.props.actions.getBooks()
   }
 
+  handleFilter() {
+    this.props.books.filter(b => b.completed === "yes")
+  }
+
   render() {
-    const { match } = this.props
     return (
       <div className="BooksContainer">
         {this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
         <div className="col-md-8">
-          {this.props.children}
         </div>
         <BookForm />
         <BookEdit />

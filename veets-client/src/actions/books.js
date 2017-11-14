@@ -106,7 +106,8 @@ export function deleteBook(id) {
           name: book.name,
           author: book.author,
           img_url: book.img_url,
-          rating: book.rating
+          rating: book.rating,
+          completed: book.completed
         })
       })
       .then((res) => res.json())
@@ -115,3 +116,17 @@ export function deleteBook(id) {
       })
     }
   }
+
+  export const setVisibilityFilter = (filter) => {
+  return {
+    type: 'SET_VISIBILITY_FILTER',
+    filter
+  }
+}
+
+export const toggleBook = (id) => {
+  return {
+    type: 'TOGGLE_BOOK',
+    id
+  }
+}
