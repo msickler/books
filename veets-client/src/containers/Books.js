@@ -37,8 +37,14 @@ class Books extends Component {
   render() {
     return (
       <div className="BooksContainer">
-      <div className="">
-      <input type="text" placeholder="Search" onChange={this.onInputChange}/>
+      <div className="row">
+      <div className="centered-col app-subtitle">
+      Search <br />
+      <input type="text" className="search-bar-field" onChange={this.onInputChange}/>
+      <br/>
+      <hr className="divider" />
+      <br/>
+      </div>
       </div>
         {this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
         <div className="col-md-8">

@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = () => (
   <p>
-    © BookList - M. Sckler  
+  © Book.Shelf by <a className="links" href="https://github.com/msickler" target="_blank">M. Sickler</a> | Design: <a className="links" href="https://github.com/msickler" target="_blank">M. Sickler</a>
   </p>
 )
 
