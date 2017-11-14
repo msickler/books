@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/books.js'
 import { bindActionCreators } from 'redux'
 import Scroll from 'react-scroll'; // Imports all Mixins
-import {scroller} from 'react-scroll'; //Imports scroller mixin, can use as scroller.scrollTo()
 let Element    = Scroll.Element;
 
 class BookEdit extends Component {

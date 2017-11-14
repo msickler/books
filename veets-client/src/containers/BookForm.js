@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { updateBookFormData } from '../actions/bookForm';
 import { createBook } from '../actions/books';
 import Scroll from 'react-scroll'; // Imports all Mixins
-import {scroller} from 'react-scroll'; //Imports scroller mixin, can use as scroller.scrollTo()
 let Element    = Scroll.Element;
 
 class BookForm extends Component {

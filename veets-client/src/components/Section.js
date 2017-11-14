@@ -1,48 +1,41 @@
-// ES6 Imports
-import React, { Component } from 'react';
-import Scroll from 'react-scroll'; // Imports all Mixins
-import {scroller} from 'react-scroll'; //Imports scroller mixin, can use as scroller.scrollTo()
-import './NavBar.css';
+import React from 'react';
+import Scroll from 'react-scroll';
 
-
-
-// Or Access Link,Element,etc as follows
 let Link       = Scroll.Link;
-let Element    = Scroll.Element;
 let Events     = Scroll.Events;
 let scroll     = Scroll.animateScroll;
 let scrollSpy  = Scroll.scrollSpy;
 
+class Section extends React.Component {
 
-var Section = React.createClass({
-  componentDidMount: function() {
-
+  componentDidMount() {
     Events.scrollEvent.register('begin', function(to, element) {
       console.log("begin", arguments);
     });
-
     Events.scrollEvent.register('end', function(to, element) {
       console.log("end", arguments);
     });
-
     scrollSpy.update();
+  }
 
-  },
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     Events.scrollEvent.remove('begin');
     Events.scrollEvent.remove('end');
-  },
-  scrollToTop: function() {
-    scroll.scrollToTop();
-  },
-  scrollToBottom: function() {
-    scroll.scrollToBottom();
-  },
-  scrollTo: function() {
-    scroll.scrollTo(100);
-  },
+  }
 
-  render: function () {
+  scrollToTop() {
+    scroll.scrollToTop();
+  }
+
+  scrollToBottom() {
+    scroll.scrollToBottom();
+  }
+
+  scrollTo() {
+    scroll.scrollTo(100);
+  }
+
+  render() {
   	return (
       <div>
         <Link className="navBarLink" to="bookForm" spy={true} smooth={true} offset={50} duration={500} >
@@ -57,8 +50,8 @@ var Section = React.createClass({
         <a className="navBarLink" onClick={this.scrollToTop}>Up</a>
         <a className="navBarLink" onClick={this.scrollToBottom}>Down</a>
         </div>
-	);
-  }
-});
+	    );
+    }
+};
 
-export default Section
+export default Section;

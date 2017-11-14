@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BookCard from '../components/BookCard';
 import BookForm from './BookForm';
-import { getBooks } from '../actions/books';
 import './Books.css';
 import BookDelete from './BookDelete'
 import BookEdit from './BookEdit';

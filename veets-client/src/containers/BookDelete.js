@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteBook } from '../actions/books';
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions/books'
 import Scroll from 'react-scroll'; // Imports all Mixins
-import {scroller} from 'react-scroll'; //Imports scroller mixin, can use as scroller.scrollTo()
 let Element    = Scroll.Element;
 
 

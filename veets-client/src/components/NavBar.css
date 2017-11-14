@@ -16,7 +16,7 @@
 
 .navBarLink a {
     display: block;
-    color: gray;
+    color: #919191;
     text-align: center;
     padding: 10px 16px;
     text-decoration: none;
@@ -24,6 +24,7 @@
 
 .navBarLink a:hover:not(.active) {
     background-color: #fafafa;
+    color: #54a555;
 }
 
 .active {
