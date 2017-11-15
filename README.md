@@ -11,20 +11,22 @@ Easy, quick, neat.
 ## Usage
 
 With a Rails API Backend, you will need to run the rails server on localhost:3001.
-
-`$ bundle`
-`$ rake db:migrate`
+```
+$ bundle
+$ rake db:migrate
+```
 
 There are also some seeds included, to play around with the app first, if you like.
-
+```
 $ rake db:seed
-
+```
+```
 $ rails s
-
+```
 The app is built with React - Redux, it runs on localhost:3000.
-
+```
 $ npm install && npm start  
-
+```
 And you're set to go!
 
 ## Contributors Guide
