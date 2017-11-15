@@ -15,17 +15,13 @@ class Favorites extends Component {
     }
   }
 
-  componentDidMount() {
-      this.props.actions.getBooks()
-      this.setState({ myBooks: this.props.books})
-  }
-
-
-
+ componentDidMount() {
+   this.props.actions.getBooks()
+   this.setState({ myBooks: this.props.books})
+ }
 
   render() {
     const { match } = this.props
-
 
     return (
       <div className="row">
@@ -37,7 +33,6 @@ class Favorites extends Component {
             <br></br>
             </div>
           )}/>
-
         </Switch>
       </div>
     )

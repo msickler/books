@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions/books'
-import Scroll from 'react-scroll'; // Imports all Mixins
+import Scroll from 'react-scroll';
 let Element    = Scroll.Element;
-
 
 class BookDelete extends Component {
   constructor (props) {
@@ -31,25 +30,24 @@ class BookDelete extends Component {
    render() {
      return (
        <Element name="bookDelete" className="element">
-       <div className="row">
-       <br />
-       <div className="centered-col form-title">
-         Delete something?
-         <form className="form-horizontal" onSubmit={this.handleOnSubmit.bind(this)} >
-         <div className="form-group">
-           <input className="delete-form search-bar-field"
-
-             name="id"
-             type="text"
-             onChange={this.handleOnChange}
-             placeholder=" book #"
-             value={this.state.id}/>
-             </div>
-           <input className="btn btn-default btn-sm buttons" type="submit" value="Delete" />
-         </form>
-         <br />
+         <div className="row">
+           <br />
+           <div className="centered-col form-title">
+             Delete something?
+             <form className="form-horizontal" onSubmit={this.handleOnSubmit.bind(this)} >
+                <div className="form-group">
+                   <input className="delete-form search-bar-field"
+                     name="id"
+                     type="text"
+                     onChange={this.handleOnChange}
+                     placeholder=" book #"
+                     value={this.state.id}/>
+                 </div>
+               <input className="btn btn-default btn-sm buttons" type="submit" value="Delete" />
+             </form>
+             <br />
+           </div>
          </div>
-       </div>
        </Element>
      );
    }

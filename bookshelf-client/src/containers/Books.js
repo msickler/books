@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BookCard from '../components/BookCard';
 import BookOpen from '../components/BookOpen';
-import Favorites from '../components/Favorites';
 import BookForm from './BookForm';
 import BookDelete from './BookDelete'
-import BookEdit from './BookEdit';
 import * as actions from '../actions/books.js'
 import { bindActionCreators } from 'redux'
 import './Books.css';
@@ -39,41 +37,39 @@ class Books extends Component {
 
   render() {
     const { match, books } = this.props
-
     const notCompleted = this.props.books.filter(book => book.completed === "no" || book.completed === "No" );
-    const favorites = this.props.books.filter(book => book.rating === 10);
 
     return (
       <div className="BooksContainer">
-      <Switch>
-      <Route exact path={match.url} render={() => (
-        <div>
-        <div className="centered-col app-subtitle">
-          Search
-          <br />
-          <input type="text" className="search-bar-field" onChange={this.onInputChange}/>
-          <br/>
-          <hr className="divider" />
-          <br/>
-        </div>
-        <div className="row centered-col">
-          {(this.state.searchTerm === '') ?
-          this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />) :
-          this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />) }
-          <br />
-        </div>
-        <hr className="divider"/>
-        <div className="row centered-col">
-          <span className="book-title">Your open books </span>
-          <a className="links" href="/books/edit">→ Edit?</a>
-          <br /><br />
-          {notCompleted.map(book => <BookOpen key={book.id} book={book} id={book.id} store={this.props.store} />)}
-          <BookForm />
-          <BookDelete />
-        </div>
-        </div>
-      )}/>
-     </Switch>
+        <Switch>
+          <Route exact path={match.url} render={() => (
+            <div>
+              <div className="centered-col app-subtitle">
+                Search
+                <br />
+                <input type="text" className="search-bar-field" onChange={this.onInputChange}/>
+                <br/>
+                <hr className="divider" />
+                <br/>
+              </div>
+              <div className="row centered-col">
+                {(this.state.searchTerm === '') ?
+                this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />) :
+                this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />) }
+                <br />
+              </div>
+              <hr className="divider"/>
+              <div className="row centered-col">
+                <span className="book-title">Your open books </span>
+                <a className="links" href="/books/edit">→ Edit?</a>
+                <br /><br />
+                {notCompleted.map(book => <BookOpen key={book.id} book={book} id={book.id} store={this.props.store} />)}
+                <BookForm />
+                <BookDelete />
+              </div>
+            </div>
+          )}/>
+       </Switch>
       </div>
     );
   }

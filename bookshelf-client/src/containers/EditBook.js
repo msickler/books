@@ -106,7 +106,6 @@ class EditBook extends Component {
             </div>
           <input className="btn btn-default btn-sm buttons" type="submit" value="Save" />
         </form>
-        <hr/>
         {fireRedirect && (
           <Redirect to={'/'}/>
         )}

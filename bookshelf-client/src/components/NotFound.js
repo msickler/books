@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 const NotFound = () => {
   return (
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <br /><br /><br />
           <h2>404 Not Found</h2>
           <p className="App-subtitle">An error has occured, the requested page was not found.</p>
           <br/><br />
@@ -14,8 +15,7 @@ const NotFound = () => {
             exact to="/"
             >Back Home
           </NavLink>
-          <br /><br />
-          <hr />
+          <br /><br /><br /><br />
         </div>
       </div>
     </div>

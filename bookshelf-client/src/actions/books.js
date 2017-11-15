@@ -30,7 +30,6 @@ export const createBook = book => {
     return fetch(`${API_URL}/books`, {
       method: "POST",
       headers: {
-
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ book: book })
@@ -59,20 +58,6 @@ export const getBook = (id) => {
       .catch(error => console.log(error));
   }
 }
-
-//export const deleteBook = book => {
-//  return dispatch => {
-//    return fetch(`${API_URL}/books`, {
-//      method: "DELETE",
-//      headers: {
-
-  //      'Content-Type': 'application/json'
-  //    },
-  //    body: JSON.stringify({ book: book })
-  //  })
-  //  .then(response => response.json())
-  //}
-//}
 
 export function deleteBook(id) {
    return (dispatch) => {
@@ -116,17 +101,3 @@ export function deleteBook(id) {
       })
     }
   }
-
-  export const setVisibilityFilter = (filter) => {
-  return {
-    type: 'SET_VISIBILITY_FILTER',
-    filter
-  }
-}
-
-export const toggleBook = (id) => {
-  return {
-    type: 'TOGGLE_BOOK',
-    id
-  }
-}
