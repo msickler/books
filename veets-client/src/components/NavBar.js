@@ -27,6 +27,12 @@ const NavBar = props => {
             >Edit
           </NavLink>
          </li>
+         <li className="navBarLink">
+           <NavLink
+             exact to="/books/favorites"
+             >Favorites
+           </NavLink>
+          </li>
      </ul>
     );
   }

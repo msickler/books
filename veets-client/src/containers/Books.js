@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BookCard from '../components/BookCard';
+import BookOpen from '../components/BookOpen';
+import Favorites from '../components/Favorites';
 import BookForm from './BookForm';
 import BookDelete from './BookDelete'
 import BookEdit from './BookEdit';
 import * as actions from '../actions/books.js'
 import { bindActionCreators } from 'redux'
 import './Books.css';
+import { Route, Switch } from 'react-router-dom';
 
 class Books extends Component {
   constructor(props) {
@@ -35,9 +38,16 @@ class Books extends Component {
   }
 
   render() {
-    const notCompleted = this.props.books.filter(book => book.completed === "no");
+    const { match, books } = this.props
+
+    const notCompleted = this.props.books.filter(book => book.completed === "no" || book.completed === "No" );
+    const favorites = this.props.books.filter(book => book.rating === 10);
+
     return (
       <div className="BooksContainer">
+      <Switch>
+      <Route exact path={match.url} render={() => (
+        <div>
         <div className="centered-col app-subtitle">
           Search
           <br />
@@ -57,13 +67,13 @@ class Books extends Component {
           <span className="book-title">Your open books </span>
           <a className="links" href="/books/edit">→ Edit?</a>
           <br /><br />
-          {notCompleted.map(book => <li className="open-books lists"
-            style={{ fontSize: '16px', textAlign: 'left', paddingLeft: '40px'}}>
-            {book.id}. <span style={{ color: '#777'}}>{book.name}</span>    ||   <span style={{ color: '#777'}}>By: {book.author}</span>
-          </li>)}
+          {notCompleted.map(book => <BookOpen key={book.id} book={book} id={book.id} store={this.props.store} />)}
           <BookForm />
           <BookDelete />
         </div>
+        </div>
+      )}/>
+     </Switch>
       </div>
     );
   }

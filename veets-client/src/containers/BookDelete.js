@@ -48,7 +48,6 @@ class BookDelete extends Component {
            <input className="btn btn-default btn-sm buttons" type="submit" value="Delete" />
          </form>
          <br />
-         <hr/>
          </div>
        </div>
        </Element>

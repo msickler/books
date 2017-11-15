@@ -9,6 +9,7 @@ import About from '../components/About.js'
 import EditBook from './EditBook.js'
 import './App.css';
 import '../components/NavBar.css';
+import Favorites from './Favorites';
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ class App extends Component {
                   <Route exact path="/" component={Books} />
                   <Route exact path='/about' component={About}/>
                   <Route exact path='/books/edit' component={EditBook}/>
+                  <Route exact path='/books/favorites' component={Favorites}/>
                   <Route component={NotFound} />
                 </Switch>
                 <Footer />
