@@ -31,24 +31,32 @@ class Books extends Component {
 
   componentDidMount() {
     this.props.actions.getBooks()
+    this.setState({ currentlyDisplayed: this.props.books})
   }
 
   render() {
+    const notCompleted = this.props.books.filter(book => book.completed === "no");
     return (
       <div className="BooksContainer">
-        <div className="row">
-          <div className="centered-col app-subtitle">
-            Search
-            <br />
-            <input type="text" className="search-bar-field" onChange={this.onInputChange}/>
-            <br/>
-            <hr className="divider" />
-            <br/>
-          </div>
+        <div className="centered-col app-subtitle">
+          Search
+          <br />
+          <input type="text" className="search-bar-field" onChange={this.onInputChange}/>
+          <br/>
+          <hr className="divider" />
+          <br/>
         </div>
-        {this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
+        {(this.state.searchTerm === '') ?
+        this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />) :
+        this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />) }
+        <span className="book-title">Your open books </span>
+        <br /><br />
+        {notCompleted.map(book => <li className="centered-col lists"
+          style={{ fontSize: '16px', textAlign: 'left', paddingLeft: '40px'}}>
+          {book.id}. <span style={{ color: '#777'}}>{book.name}</span>    ||   <span style={{ color: '#777'}}>By: {book.author}</span>
+        </li>)}
+
         <BookForm />
-        <BookEdit />
         <BookDelete />
       </div>
     );

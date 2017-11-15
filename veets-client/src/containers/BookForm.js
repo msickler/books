@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateBookFormData } from '../actions/bookForm';
 import { createBook } from '../actions/books';
-import Scroll from 'react-scroll'; 
+import Scroll from 'react-scroll';
 let Element    = Scroll.Element;
 
 class BookForm extends Component {
@@ -28,6 +28,7 @@ class BookForm extends Component {
         <br/><br/>
         <div className="row">
           <div className="centered-col form-title">
+            <hr />
             <br/>
             Add Book
             <form onSubmit={this.handleOnSubmit} className="form-horizontal" name="firstInsideContainer">

@@ -21,6 +21,12 @@ const NavBar = props => {
         <li className="navBarLink">
           <Section />
         </li>
+        <li className="navBarLink">
+          <NavLink
+            exact to="/books/edit"
+            >Edit
+          </NavLink>
+         </li>
      </ul>
     );
   }

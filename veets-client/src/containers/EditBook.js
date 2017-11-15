@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/books.js'
 import { bindActionCreators } from 'redux'
-import Scroll from 'react-scroll'; // Imports all Mixins
-let Element    = Scroll.Element;
+import { Redirect } from 'react-router'
 
-class BookEdit extends Component {
+class EditBook extends Component {
   constructor (props) {
     super(props);
 
@@ -16,6 +15,7 @@ class BookEdit extends Component {
       rating: '',
       completed: '',
       id: '',
+      fireRedirect: false
     };
   }
 
@@ -42,16 +42,19 @@ class BookEdit extends Component {
       rating: '',
       completed: '',
       id: '',
+      fireRedirect: true
     })
   }
 
   render() {
+    const { fireRedirect } = this.state
+
     return (
-      <Element name="bookEdit" className="element">
       <div className="row">
       <div className="centered-col form-title">
       <br/>
         Edit Book
+        <p className="links" style={{ fontSize: '15px', fontFamily: 'Crimson Text' }}>Say the number and we take care of it.</p>
         <form onSubmit={this.handleOnSubmit.bind(this)} className="form-horizontal">
         <div className="form-group">
         <label htmlFor="id" className="control-label col-sm-2 book-form">#:</label>
@@ -104,9 +107,12 @@ class BookEdit extends Component {
           <input className="btn btn-default btn-sm buttons" type="submit" value="Save" />
         </form>
         <hr/>
+        {fireRedirect && (
+          <Redirect to={'/'}/>
+        )}
         </div>
       </div>
-      </Element>
+
     );
   }
 }
@@ -115,4 +121,4 @@ function mapDispatchToProps(dispatch) {
   return {actions: bindActionCreators(actions, dispatch)}
 }
 
-export default connect(null, mapDispatchToProps)(BookEdit);
+export default connect(null, mapDispatchToProps)(EditBook);

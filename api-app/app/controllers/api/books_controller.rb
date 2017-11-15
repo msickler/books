@@ -2,8 +2,15 @@ class Api::BooksController < ApplicationController
   before_action :set_book, only: [:show, :update, :destroy]
 
   def index
+    #@completed = Book.completed
     render json: Book.all
   end
+
+  def completed
+    #@completed = Book.completed
+    #render json: @completed
+  end
+
 
   def create
     book = Book.new(book_params)
@@ -56,7 +63,7 @@ class Api::BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:id, :name, :author, :img_url, :rating)
+      params.require(:book).permit(:id, :name, :author, :img_url, :rating, :completed)
     end
 
 end
