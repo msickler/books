@@ -135,3 +135,12 @@
   list-style-type: circle;
   color: #afd6af;
 }
+
+.footer-divider {
+  background-image: url('https://i.imgur.com/OfxFOWf.gif');
+  background-repeat: no-repeat;
+  background-attachment: relative;
+  background-position: 50% 125%;
+  opacity: 0.85;
+  background-size: 20%;
+}

@@ -25,7 +25,7 @@ class BookForm extends Component {
 
     return (
       <Element name="bookForm" className="element">
-        <br/><br/>
+        <br/>
         <div className="row">
           <div className="centered-col form-title">
             <hr />

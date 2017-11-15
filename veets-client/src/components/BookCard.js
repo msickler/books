@@ -8,7 +8,7 @@ const BookCard = ({ book }) => (
       <h3 className="book-title">
         {book.id}. <a className="links" href={`/books/${book.id}`}>{book.name}</a>
       </h3>
-      <p>Author: <span className="links">{book.author}</span></p>
+      <p>Author: <span className="links">{book.author.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})}</span></p>
       <p>Rating: {book.rating}/10 • Completed: {book.completed}</p>
     </div>
     <hr/>

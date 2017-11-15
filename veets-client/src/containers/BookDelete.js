@@ -32,6 +32,7 @@ class BookDelete extends Component {
      return (
        <Element name="bookDelete" className="element">
        <div className="row">
+       <br />
        <div className="centered-col form-title">
          Delete something?
          <form className="form-horizontal" onSubmit={this.handleOnSubmit.bind(this)} >
@@ -46,6 +47,7 @@ class BookDelete extends Component {
              </div>
            <input className="btn btn-default btn-sm buttons" type="submit" value="Delete" />
          </form>
+         <br />
          <hr/>
          </div>
        </div>
