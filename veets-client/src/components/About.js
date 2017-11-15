@@ -6,7 +6,7 @@ const About = () => {
     <div>
       <div className="row">
         <div className="centered-col">
-          <img className="" src="http://www.powerpointhintergrund.com/uploads/books-transparent-background-25.png" alt="book" style={{ width:'50%' }}/>
+          <img className="" src="http://www.powerpointhintergrund.com/uploads/books-transparent-background-25.png" alt="book" style={{ width:'50%', opacity: '0.6' }}/>
           <hr className="divider" />
           <p className="about">
             Hello there! Welcome to BookShelf.<br/>

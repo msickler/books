@@ -31,7 +31,7 @@ class BookForm extends Component {
             <hr />
             <br/>
             Add Book
-            <form onSubmit={this.handleOnSubmit} className="form-horizontal" name="firstInsideContainer">
+            <form onSubmit={this.handleOnSubmit} className="form-horizontal open-books" name="firstInsideContainer">
               <div className="form-group">
                 <label htmlFor="name" className="control-label col-sm-2 book-form">Name:</label>
                 <input

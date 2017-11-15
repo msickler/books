@@ -35,7 +35,16 @@
 
 .centered-col {
   margin: auto;
-  max-width: 500px;
+  max-width: 700px;
+}
+
+.book-card {
+  float: left;
+  padding: 0;
+  margin: 0 auto;
+  margin: 0, -10%;
+  width: 50%;
+  align-content: center;
 }
 
 .book-title {
@@ -126,7 +135,7 @@
 }
 
 .open-books {
-  max-width: 300px;
+  max-width: 470px;
   text-align: center;
   margin: auto;
 }

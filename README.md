@@ -45,4 +45,4 @@ Pull requests are welcome on Github at https://github.com/msickler/books.
 
 ## License
 
-See [LICENSE](https://github.com/msickler/books/api-app/master/LICENSE) for the project license.
+See [LICENSE](https://github.com/msickler/books/api-app/LICENSE) for the project license.

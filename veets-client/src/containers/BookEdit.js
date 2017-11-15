@@ -52,7 +52,7 @@ class BookEdit extends Component {
       <div className="centered-col form-title">
       <br/>
         Edit Book
-        <form onSubmit={this.handleOnSubmit.bind(this)} className="form-horizontal">
+        <form onSubmit={this.handleOnSubmit.bind(this)} className="form-horizontal open-books">
         <div className="form-group">
         <label htmlFor="id" className="control-label col-sm-2 book-form">#:</label>
           <input className="form-control"

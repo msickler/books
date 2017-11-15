@@ -55,7 +55,7 @@ class EditBook extends Component {
       <br/>
         Edit Book
         <p className="links" style={{ fontSize: '15px', fontFamily: 'Crimson Text' }}>Say the number and we take care of it.</p>
-        <form onSubmit={this.handleOnSubmit.bind(this)} className="form-horizontal">
+        <form onSubmit={this.handleOnSubmit.bind(this)} className="form-horizontal open-books">
         <div className="form-group">
         <label htmlFor="id" className="control-label col-sm-2 book-form">#:</label>
           <input className="form-control"
