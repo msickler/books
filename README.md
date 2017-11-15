@@ -3,15 +3,17 @@
 ## Description
 
 Your virtual bookshelves. Add on and on to store your books neatly and bring them anywhere you go.
+
 For any literature enthusiast, book collector or avid reader.
+
 Easy, quick, neat.  
 
 ## Usage
 
 With a Rails API Backend, you will need to run the rails server on localhost:3001.
 
-$ bundle
-$ rake db:migrate
+`$ bundle`
+`$ rake db:migrate`
 
 There are also some seeds included, to play around with the app first, if you like.
 
@@ -29,7 +31,7 @@ And you're set to go!
 
 We're happy to accept contributors. Please read ahead to learn how to make the most meaningful and useful impact.
 
-# Submit a Pull Request to Suggest an Improvement
+## Submit a Pull Request to Suggest an Improvement
 
 If you see an opportunity for improvement and can make the change yourself go ahead and use a typical git workflow to make it happen:
 
