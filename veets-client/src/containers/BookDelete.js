@@ -36,15 +36,15 @@ class BookDelete extends Component {
          Delete something?
          <form className="form-horizontal" onSubmit={this.handleOnSubmit.bind(this)} >
          <div className="form-group">
-           <input className="delete-form"
+           <input className="delete-form search-bar-field"
 
              name="id"
              type="text"
              onChange={this.handleOnChange}
-             placeholder="Book #:"
+             placeholder=" book #"
              value={this.state.id}/>
              </div>
-           <input className="btn btn-default btn-sm buttons" type="submit" value="Delete Book" />
+           <input className="btn btn-default btn-sm buttons" type="submit" value="Delete" />
          </form>
          <hr/>
          </div>

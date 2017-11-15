@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BookCard from '../components/BookCard';
 import BookForm from './BookForm';
-import './Books.css';
 import BookDelete from './BookDelete'
 import BookEdit from './BookEdit';
 import * as actions from '../actions/books.js'
 import { bindActionCreators } from 'redux'
+import './Books.css';
 
 class Books extends Component {
   constructor(props) {
@@ -36,18 +36,17 @@ class Books extends Component {
   render() {
     return (
       <div className="BooksContainer">
-      <div className="row">
-      <div className="centered-col app-subtitle">
-      Search <br />
-      <input type="text" className="search-bar-field" onChange={this.onInputChange}/>
-      <br/>
-      <hr className="divider" />
-      <br/>
-      </div>
-      </div>
-        {this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
-        <div className="col-md-8">
+        <div className="row">
+          <div className="centered-col app-subtitle">
+            Search
+            <br />
+            <input type="text" className="search-bar-field" onChange={this.onInputChange}/>
+            <br/>
+            <hr className="divider" />
+            <br/>
+          </div>
         </div>
+        {this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />)}
         <BookForm />
         <BookEdit />
         <BookDelete />
@@ -61,9 +60,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = (state) => {
-  return ({
-    books: state.books
-  })
+  return ({ books: state.books })
 }
 
  export default connect(mapStateToProps, mapDispatchToProps)(Books);

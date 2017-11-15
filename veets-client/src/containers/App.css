@@ -51,7 +51,13 @@
 
 .form-control {
   max-width: 400px;
-  font-family: Arial;
+  font-family: 'Crimson Text', serif;
+  color: #919191;
+  border-radius: 10px;
+}
+
+.form-control:hover {
+  border-color: #afd6af;
 }
 
 .form-title {
@@ -60,7 +66,15 @@
 }
 
 .buttons {
-  font-family: Arial;
+  font-family: 'Crimson Text', serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 10px;
+  color: #777;
+}
+
+.buttons:hover {
+  border-color: #afd6af;
 }
 
 .about {

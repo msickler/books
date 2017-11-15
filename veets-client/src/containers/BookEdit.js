@@ -90,7 +90,7 @@ class BookEdit extends Component {
               onChange={this.handleOnChange}
               value={this.state.rating}/>
             </div>
-          <input className="btn btn-default btn-sm buttons" type="submit" value="Edit Book" />
+          <input className="btn btn-default btn-sm buttons" type="submit" value="Save" />
         </form>
         <hr/>
         </div>
