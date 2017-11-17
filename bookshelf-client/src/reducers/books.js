@@ -12,6 +12,9 @@ export default (state = [], action) => {
     case 'SUCCESSFULLY_DELETED_BOOK':
       return action.payload
 
+    case 'SUCCESSFULLY_EDITED_BOOK':
+      return action.payload 
+
     default:
       return state;
   }

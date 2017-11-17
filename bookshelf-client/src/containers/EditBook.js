@@ -14,7 +14,7 @@ class EditBook extends Component {
       img_url: '',
       rating: '',
       completed: '',
-      id: '',
+      id: this.props.match.params.id,
       fireRedirect: false
     };
   }

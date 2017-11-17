@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import NotFound from '../components/NotFound.js'
 import About from '../components/About.js'
 import EditBook from './EditBook.js'
+import Book from './Book.js'
 import './App.css';
 import '../components/NavBar.css';
 import Favorites from './Favorites';
@@ -23,9 +24,12 @@ class App extends Component {
               <NavBar />
                 <Switch>
                   <Route exact path="/" component={Books} />
+                  <Route exact path="/books" component={Books} />
                   <Route exact path='/about' component={About}/>
-                  <Route exact path='/books/edit' component={EditBook}/>
+                  <Route exact path='/books/:id/edit' component={EditBook}/>
+                
                   <Route exact path='/books/favorites' component={Favorites}/>
+                  <Route path="/books/:book" component={Book}/>
                   <Route component={NotFound} />
                 </Switch>
                 <Footer />
