@@ -88,9 +88,57 @@
   border-color: #afd6af;
 }
 
+.delete-button {
+  background-color: #fff !important;
+  color: #919191 !important;
+  font-weight: lighter !important;
+  font-size: 17px;
+  border-radius: 3px !important;
+}
+
+.delete-button:hover {
+  color: #212121 !important;
+  text-decoration: underline;
+  border-color: #fff !important;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: #fafafa;
+    font-variant: small-caps;
+    color: #777;
+    text-align: center;
+    border-radius: 3px;
+    padding: 1px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 .about {
   font-family: 'Crimson Text', serif;
   font-size: 1.2em;
+  color: #777;
+}
+
+.guides {
+  font-family: 'Crimson Text', serif;
+  text-align: left;
+  list-style-type: circle !important;
 }
 
 .links {

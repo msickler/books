@@ -31,7 +31,6 @@ class Books extends Component {
  }
 
  handleOnDelete = (event) => {
-   debugger
    event.preventDefault();
    let id = event.target.value
    this.props.actions.deleteBook(id)
@@ -44,7 +43,7 @@ class Books extends Component {
   }
 
   render() {
-    const { match, books } = this.props
+    const { match } = this.props
     const notCompleted = this.props.books.filter(book => book.completed === "no" || book.completed === "No" );
 
     return (
