@@ -44,7 +44,7 @@ class Section extends React.Component {
         <Link className="navBarLink" to="bookDelete" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}>
           Delete
         </Link>
-        <a className="navBarLink" onClick={this.scrollToTop}>Search  ↑ </a>
+        <a className="navBarLink" onClick={this.scrollToTop}>↑</a>
         <a className="navBarLink" onClick={this.scrollToBottom}>↓</a>
         </div>
 	    );

@@ -27,10 +27,12 @@ class Favorites extends Component {
       <div className="row">
         <Switch>
           <Route exact path={match.url} render={() => (
-            <div className="favorites">
-            <h3 className="favorites-title"> Priced Collection </h3><hr/>
-            {this.props.books.filter(book => book.rating === 10).map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />) }
-            <br></br>
+            <div>
+              <h3 className="favorites-title"> Priced Collection </h3><hr style={{ width: '60%'}}/>
+              <div className="favorites">
+                {this.props.books.filter(book => book.rating === 10).map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />) }
+                <br></br>
+              </div>
             </div>
           )}/>
         </Switch>

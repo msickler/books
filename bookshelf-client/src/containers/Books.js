@@ -8,6 +8,8 @@ import * as actions from '../actions/books.js'
 import { bindActionCreators } from 'redux'
 import './Books.css';
 import { Route, Switch } from 'react-router-dom';
+import HomeNav from '../components/HomeNav'
+
 
 class Books extends Component {
   constructor(props) {
@@ -51,6 +53,7 @@ class Books extends Component {
         <Switch>
           <Route exact path={match.url} render={() => (
             <div>
+            <HomeNav />
               <div className="centered-col app-subtitle">
                 Search
                 <br />
@@ -59,7 +62,7 @@ class Books extends Component {
                 <hr className="divider" />
                 <br/>
               </div>
-              <div className="row centered-col">
+              <div className="row books-container">
                 {(this.state.searchTerm === '') ?
                 this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) :
                 this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) }

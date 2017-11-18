@@ -3,7 +3,7 @@ import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 import Section from './Section';
 
-const NavBar = props => {
+const HomeNav = props => {
   return (
     <ul className="navBar">
       <li className="navBarLink">
@@ -17,6 +17,9 @@ const NavBar = props => {
            exact to="/about"
            >About
          </NavLink>
+        </li>
+        <li className="navBarLink">
+          <Section />
         </li>
         <li className="navBarLink">
           <NavLink
@@ -34,4 +37,4 @@ const NavBar = props => {
     );
   }
 
-export default NavBar;
+export default HomeNav;

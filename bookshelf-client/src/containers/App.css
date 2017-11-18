@@ -36,17 +36,30 @@
 .centered-col {
   margin: auto;
   max-width: 700px;
+
+}
+
+.books-container {
+  margin: auto;
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.books-container:after {
+  content: "";
+  flex: auto;
 }
 
 .book-card {
   float: left;
-  padding: 0;
-  margin: 0 auto;
-  margin: 0, -10%;
+  padding: 5px;
+  margin-top: 0 !important; margin-left: 0 !important;
+  margin-bottom: 0 !important; margin-right: 0 !important;
   width: 50%;
   align-content: center;
   line-height: 90%;
-
 }
 
 .book-title {
@@ -208,6 +221,14 @@
   margin: auto;
   width: 80%;
   align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.favorites:after {
+  content: "";
+  flex: auto;
 }
 
 .favorites-title {
