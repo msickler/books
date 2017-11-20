@@ -22,15 +22,14 @@ const About = () => {
           <p className="book-title">
             Here are some helpful guides<br/>
           </p>
-          <p className="about guides">
-            <ul className="guides">
-              <li>To <strong>Add</strong> a book entry, navigate to 'Add' and enter your values, you can edit these at any time.</li>
-              <li>To <strong>Edit</strong> a book, click on the title link, you will be redirected.
-                  Or, if you prefer, navigate to 'Edit' and enter the book number you wish to edit. You'll be redirected.</li>
-              <li>To <strong>Delete</strong> a book, simply click on the 'x' next to the title.
-                  You may also navigate to the 'Delete' section and indicate which book you wish to delete.</li>
-            </ul>
-          </p>
+          <ul className="about guides">
+            <li>To <strong>Add</strong> a book entry, navigate to 'Add' and enter your values, you can edit these at any time.</li>
+            <li>To <strong>Edit</strong> a book, click on the title link, you will be redirected.
+                Or, if you prefer, navigate to 'Edit' and enter the book number you wish to edit. You'll be redirected here too.</li>
+            <li>To <strong>Delete</strong> a book, simply click on the 'x' next to the title.
+                You may also navigate to the 'Delete' section and indicate which book you wish to delete.</li>
+            <li>Navigate to <strong>Favorites</strong> to find your priced collection which contains all your books rated 10/10. </li>
+          </ul>
           <br />
           <NavLink
             className="btn btn-default btn-sm buttons"

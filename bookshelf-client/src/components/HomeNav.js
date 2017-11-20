@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import { NavLink } from 'react-router-dom';
-import Section from './Section';
+import Section from '../containers/Section';
 
 const HomeNav = props => {
   return (

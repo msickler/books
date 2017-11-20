@@ -1,4 +1,5 @@
 import { resetBookForm } from './bookForm';
+import fetch from 'isomorphic-fetch';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -9,19 +10,20 @@ const setBooks = books => {
   }
 }
 
+export const getBooks = () => {
+  return dispatch => {
+    dispatch({ type: 'LOADING_BOOKS' })
+    return fetch(`${API_URL}/books`)
+      .then(response => response.json())
+      .then(books => dispatch(setBooks(books)))
+      .catch(error => console.log(error))
+  }
+}
+
 const addBook = book => {
   return {
     type: 'CREATE_BOOK_SUCCESS',
     book
-  }
-}
-
-export const getBooks = () => {
-  return dispatch => {
-    return fetch(`${API_URL}/books`)
-      .then(response => response.json())
-      .then(books => dispatch(setBooks(books)))
-      .catch(error => console.log(error));
   }
 }
 
@@ -43,25 +45,9 @@ export const createBook = book => {
   }
 }
 
-const setBook = book => {
-  return {
-    type: 'GET_BOOK_SUCCESS',
-    book
-  }
-}
-
-export const getBook = (id) => {
-  return dispatch => {
-    return fetch(`${API_URL}/books/${id}`)
-      .then(response => response.json())
-      .then(book => dispatch(setBook(book)))
-      .catch(error => console.log(error));
-  }
-}
-
 export function deleteBook(id) {
    return (dispatch) => {
-     dispatch({ type: 'DELETE_BOOK' });
+     dispatch({ type: 'DELETE_BOOK' })
      return fetch(`${API_URL}/books/${id}`, {
        method:'DELETE',
        headers: {
@@ -72,14 +58,14 @@ export function deleteBook(id) {
      })
      .then((res) => res.json())
      .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_DELETED_BOOK', payload: responseJson})
-       return responseJson;
+       return responseJson
      })
    }
  }
 
  export function editBook(book) {
     return (dispatch) => {
-      dispatch({ type: 'EDIT_BOOK' });
+      dispatch({ type: 'EDIT_BOOK' })
       return fetch(`${API_URL}/books/${book.id}`, {
         method:'PATCH',
         headers: {
@@ -97,7 +83,7 @@ export function deleteBook(id) {
       })
       .then((res) => res.json())
       .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_EDITED_BOOK', payload: responseJson })
-      return responseJson;
+      return responseJson
       })
     }
   }

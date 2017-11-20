@@ -3,17 +3,16 @@ import { connect } from 'react-redux';
 import BookCard from '../components/BookCard';
 import BookOpen from '../components/BookOpen';
 import BookForm from './BookForm';
-import BookDelete from './BookDelete'
-import * as actions from '../actions/books.js'
-import { bindActionCreators } from 'redux'
-import './Books.css';
+import BookDelete from './BookDelete';
+import * as actions from '../actions/books.js';
+import { bindActionCreators } from 'redux';
 import { Route, Switch } from 'react-router-dom';
-import HomeNav from '../components/HomeNav'
-
+import HomeNav from '../components/HomeNav';
+import './Books.css';
 
 class Books extends Component {
   constructor(props) {
-   super(props);
+   super(props)
 
    this.state = {
      books: [],
@@ -36,7 +35,7 @@ class Books extends Component {
    event.preventDefault();
    let id = event.target.value
    this.props.actions.deleteBook(id)
-   this.setState({id: ""})
+   this.setState({id: ''})
  }
 
   componentDidMount() {
@@ -46,34 +45,32 @@ class Books extends Component {
 
   render() {
     const { match } = this.props
-    const notCompleted = this.props.books.filter(book => book.completed === "no" || book.completed === "No" );
+    const notCompleted = this.props.books.filter(book => book.completed === "no" || book.completed === "No" )
 
     return (
       <div className="BooksContainer">
         <Switch>
           <Route exact path={match.url} render={() => (
             <div>
-            <HomeNav />
+              <HomeNav />
               <div className="centered-col app-subtitle">
-                Search
-                <br />
-                <input type="text" className="search-bar-field" onChange={this.onInputChange}/>
-                <br/>
-                <hr className="divider" />
-                <br/>
+                Search<br/>
+                <input type="text" className="search-bar-field" onChange={this.onInputChange}/><br/>
+                <hr className="divider" /><br/>
               </div>
               <div className="row books-container">
-                {(this.state.searchTerm === '') ?
-                this.props.books.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) :
-                this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) }
+                { (this.state.searchTerm === '') ?
+                  this.props.books.sort((a, b) => a.name.toUpperCase() > b.name.toUpperCase())
+                  .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) :
+                  this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) }
                 <br />
               </div>
               <hr className="divider"/>
               <div className="row centered-col">
-                <span className="book-title">Your open books </span>
-                <a className="links" href="/books/edit">→ Edit?</a>
+                <span className="book-title">Your open books</span>
                 <br /><br />
-                {notCompleted.map(book => <BookOpen key={book.id} book={book} id={book.id} store={this.props.store} />)}
+                {notCompleted.sort((a, b) => a.name.toUpperCase() > b.name.toUpperCase())
+                  .map(book => <BookOpen key={book.id} book={book} id={book.id} store={this.props.store} />)}
                 <BookForm />
                 <BookDelete />
               </div>
@@ -81,7 +78,7 @@ class Books extends Component {
           )}/>
        </Switch>
       </div>
-    );
+    )
   }
 }
 

@@ -2,8 +2,8 @@ import React, { Component }  from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import BookCard from '../components/BookCard';
-import * as actions from '../actions/books.js'
-import { bindActionCreators } from 'redux'
+import * as actions from '../actions/books.js';
+import { bindActionCreators } from 'redux';
 
 class Favorites extends Component {
   constructor(props) {
@@ -13,6 +13,13 @@ class Favorites extends Component {
       books: [],
       myBooks:this.props.books
     }
+  }
+
+  handleOnDelete = (event) => {
+    event.preventDefault();
+    let id = event.target.value
+    this.props.actions.deleteBook(id)
+    this.setState({id: ""})
   }
 
  componentDidMount() {
@@ -30,7 +37,9 @@ class Favorites extends Component {
             <div>
               <h3 className="favorites-title"> Priced Collection </h3><hr style={{ width: '60%'}}/>
               <div className="favorites">
-                {this.props.books.filter(book => book.rating === 10).map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} />) }
+                {this.props.books.filter(book => book.rating === 10)
+                  .sort((a, b) => a.name.toUpperCase() > b.name.toUpperCase())
+                  .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) }
                 <br></br>
               </div>
             </div>
