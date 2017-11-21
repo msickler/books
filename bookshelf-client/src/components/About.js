@@ -30,6 +30,13 @@ const About = () => {
                 You may also navigate to the 'Delete' section and indicate which book you wish to delete.</li>
             <li>Navigate to <strong>Favorites</strong> to find your priced collection which contains all your books rated 10/10. </li>
           </ul>
+          <p className="about">
+            <br/>
+            <strong>Note:</strong> no field or format is required, the app is for each user to keep their library under their own rules.<br/>
+            At any moment, you can add a new title without a cover, adding a picture later, editing only the field you want to update, delete and re-do.<br/>
+            However, the list of books will be sorted alphabetically automatically, and certain attributes, such as the Name and Author will be capitalized appropiatedly.
+            Those are features the app can cover for you.
+          </p>
           <br />
           <NavLink
             className="btn btn-default btn-sm buttons"

@@ -1,6 +1,6 @@
 import React from 'react';
-import './NavBar.css';
 import { NavLink } from 'react-router-dom';
+import './NavBar.css';
 
 const NavBar = props => {
   return (
@@ -28,7 +28,7 @@ const NavBar = props => {
              exact to="/books/favorites"
              >Favorites
            </NavLink>
-          </li>
+        </li>
      </ul>
     );
   }

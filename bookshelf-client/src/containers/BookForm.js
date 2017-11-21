@@ -8,7 +8,7 @@ let Element    = Scroll.Element;
 class BookForm extends Component {
 
   handleOnChange = event => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
     const currentBookFormData = Object.assign({}, this.props.bookFormData, {
       [name]: value
     })
@@ -95,9 +95,7 @@ class BookForm extends Component {
 }
 
 const mapStateToProps = state => {
-  return {
-    bookFormData: state.bookFormData
-  }
+  return { bookFormData: state.bookFormData }
 }
 
 export default connect(mapStateToProps, { updateBookFormData, createBook })(BookForm);

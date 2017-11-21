@@ -1,7 +1,7 @@
 import React from 'react';
-import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 import Section from '../containers/Section';
+import './NavBar.css';
 
 const HomeNav = props => {
   return (
@@ -32,7 +32,7 @@ const HomeNav = props => {
              exact to="/books/favorites"
              >Favorites
            </NavLink>
-          </li>
+        </li>
      </ul>
     );
   }

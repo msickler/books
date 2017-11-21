@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Books from './Books';
 import NavBar from '../components/NavBar'
 import Header from '../components/Header.js'
@@ -7,9 +7,8 @@ import Footer from '../components/Footer'
 import NotFound from '../components/NotFound.js'
 import About from '../components/About.js'
 import EditBook from './EditBook.js'
-import './App.css';
-import '../components/NavBar.css';
 import Favorites from './Favorites';
+import './App.css';
 
 class App extends Component {
 
