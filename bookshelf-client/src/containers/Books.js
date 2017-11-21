@@ -18,7 +18,8 @@ class Books extends Component {
      books: [],
      searchTerm: '',
      newlyDisplayed: [],
-     currentlyDisplayed: this.props.books
+     currentlyDisplayed: this.props.books,
+     likes: 0
    }
    this.onInputChange = this.onInputChange.bind(this)
  }
@@ -61,9 +62,9 @@ class Books extends Component {
               <div className="row books-container">
                 { (this.state.searchTerm === '') ?
                   this.props.books.sort((a,b) => a.name.localeCompare(b.name))
-                    .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) :
+                    .map(book => <BookCard key={book.id} book={book} likes={this.state.likes} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete} handleClick={this.handleOnClick}/>) :
                   this.state.currentlyDisplayed.sort((a,b) => a.name.localeCompare(b.name))
-                    .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) }
+                    .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete} />) }
                 <br />
               </div>
               <hr className="divider"/>
