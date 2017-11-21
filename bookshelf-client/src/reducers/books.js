@@ -5,10 +5,10 @@ export default (state = [], action) => {
      return state
 
     case 'GET_BOOKS_SUCCESS':
-      return action.books;
+      return action.books
 
     case 'CREATE_BOOK_SUCCESS':
-      return state.concat(action.book);
+      return state.concat(action.book)
 
     case 'DELETE_BOOK':
       return state

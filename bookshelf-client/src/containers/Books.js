@@ -25,6 +25,7 @@ class Books extends Component {
 
  onInputChange(event) {
    let newlyDisplayed = this.props.books.filter(book => book.name.toLowerCase().includes(event.target.value.toLowerCase()))
+   
    this.setState({
      searchTerm: event.target.value,
      currentlyDisplayed: newlyDisplayed
@@ -40,7 +41,7 @@ class Books extends Component {
 
   componentDidMount() {
     this.props.actions.getBooks()
-    this.setState({ currentlyDisplayed: this.props.books})
+    this.setState({ currentlyDisplayed: this.props.books })
   }
 
   render() {
@@ -60,9 +61,10 @@ class Books extends Component {
               </div>
               <div className="row books-container">
                 { (this.state.searchTerm === '') ?
-                  this.props.books.sort((a, b) => a.name.toUpperCase() > b.name.toUpperCase())
-                  .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) :
-                  this.state.currentlyDisplayed.map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) }
+                  this.props.books.sort((a,b) => a.name.localeCompare(b.name))
+                    .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) :
+                  this.state.currentlyDisplayed.sort((a,b) => a.name.localeCompare(b.name))
+                    .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) }
                 <br />
               </div>
               <hr className="divider"/>

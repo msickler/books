@@ -35,10 +35,9 @@ class Favorites extends Component {
         <Switch>
           <Route exact path={match.url} render={() => (
             <div>
-              <h3 className="favorites-title"> Priced Collection </h3><hr style={{ width: '60%'}}/>
+              <h3 className="favorites-title"> Priced Collection</h3><hr style={{ width: '60%'}}/>
               <div className="favorites">
-                {this.props.books.filter(book => book.rating === 10)
-                  .sort((a, b) => a.name.toUpperCase() > b.name.toUpperCase())
+                {this.props.books.filter(book => book.rating === 10).sort((a,b) => a.name.localeCompare(b.name))
                   .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete}/>) }
                 <br></br>
               </div>
