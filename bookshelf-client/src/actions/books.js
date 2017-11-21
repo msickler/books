@@ -20,6 +20,13 @@ export const getBooks = () => {
   }
 }
 
+export const increment = (key)  => {
+  return {
+    type: 'INCREMENT_LIKES',
+    key
+  }
+}
+
 const addBook = book => {
   return {
     type: 'CREATE_BOOK_SUCCESS',
@@ -78,7 +85,8 @@ export function deleteBook(id) {
           author: book.author,
           img_url: book.img_url,
           rating: book.rating,
-          completed: book.completed
+          completed: book.completed,
+          likes: book.likes
         })
       })
       .then((res) => res.json())
@@ -87,3 +95,23 @@ export function deleteBook(id) {
       })
     }
   }
+
+  export function addLikes(book) {
+     return (dispatch) => {
+       dispatch({ type: 'ADD_LIKES' })
+       return fetch(`${API_URL}/books/${book.id}`, {
+         method:'PATCH',
+         headers: {
+           'Accept': 'application/json',
+           'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({
+           likes: book.likes + 1
+         })
+       })
+       .then((res) => res.json())
+       .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_ADDED_LIKE', payload: responseJson })
+       return responseJson
+       })
+     }
+   }

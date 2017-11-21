@@ -7,6 +7,9 @@ export default (state = [], action) => {
     case 'GET_BOOKS_SUCCESS':
       return action.books
 
+    case 'INCREMENT_LIKES':
+      return state.likes + 1
+
     case 'CREATE_BOOK_SUCCESS':
       return state.concat(action.book)
 
@@ -21,6 +24,12 @@ export default (state = [], action) => {
 
     case 'SUCCESSFULLY_EDITED_BOOK':
       return action.payload
+
+    case 'ADD_LIKES':
+      return state
+
+      case 'SUCCESSFULLY_ADDED_LIKE':
+        return action.payload
 
     default:
       return state;

@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import * as actions from '../actions/books.js';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-const API_URL = process.env.REACT_APP_API_URL;
 
 class BookCard extends Component {
-  constructor(props) {
-   super(props)
 
-   this.state = {
-     likes: 0,
-    }
-  }
-
-  handleOnClick = (event) => {
-    console.log('clicking')
-    this.setState({ likes: this.state.likes + 1})
+  handleClick = (event) => {
+    debugger
+    let book = this.props
+    this.props.actions.addLikes(book)
   }
 
  render() {
@@ -30,13 +26,17 @@ class BookCard extends Component {
        </h3>
        <p>Author: <span className="links">{book.author.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})}</span></p>
        <p>Rating: {book.rating}/10 • Completed: {book.completed}</p>
-       <button onClick={this.handleOnClick} className="btn btn-default btn-sm buttons">Like</button>
-       <p>{this.state.likes}</p>
-       <button onClick={this.callApi} className="btn btn-default btn-sm buttons">Call Api</button>
+       <p>Likes: {book.likes}</p>
+       <button className="btn btn-default btn-sm buttons" type="edit" value={book.id} onClick={this.handleClick.bind(this)}>Like</button>
+
        <br />
      </div>
    )
  }
 }
 
-export default BookCard;
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
+
+ export default connect(null, mapDispatchToProps)(BookCard);
