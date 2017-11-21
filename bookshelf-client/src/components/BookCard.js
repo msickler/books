@@ -3,18 +3,26 @@ import { Link } from 'react-router-dom';
 import * as actions from '../actions/books.js';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {Like} from './Like'
 
 
 class BookCard extends Component {
+  constructor(props) {
+   super(props)
+
+   this.state = {
+     counter: 0
+   }
+ }
 
   handleClick = (event) => {
-    debugger
     let book = this.props
+    this.setState({ counter: this.state.counter + 1  })
     this.props.actions.addLikes(book)
   }
 
  render() {
-   const { book, handleSubmit } = this.props
+   const { book, handleSubmit, key } = this.props
 
    return (
      <div key={book.id} className="media book-card">
@@ -26,9 +34,10 @@ class BookCard extends Component {
        </h3>
        <p>Author: <span className="links">{book.author.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})}</span></p>
        <p>Rating: {book.rating}/10 • Completed: {book.completed}</p>
-       <p>Likes: {book.likes}</p>
+       <p>Likes: {book.likes} : {this.state.counter}</p>
        <button className="btn btn-default btn-sm buttons" type="edit" value={book.id} onClick={this.handleClick.bind(this)}>Like</button>
-
+       Try:
+        <Like book={book}/>
        <br />
      </div>
    )

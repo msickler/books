@@ -17,5 +17,5 @@
   Book.create(name: 'A Clash of Kings', author: 'George RR Martin', img_url: 'https://images-na.ssl-images-amazon.com/images/I/81m8bFyfGaL.jpg', rating: 10, completed: 'no', likes: 0)
   Book.create(name: 'A Storm of Swords', author: 'George RR Martin', img_url: 'http://collider.com/wp-content/uploads/a-storm-of-swords-book-cover.jpg', rating: 10, completed: 'no', likes: 0)
   Book.create(name: 'The Great Gatsby', author: 'F Scott Fitzgerald', img_url: 'https://images-na.ssl-images-amazon.com/images/I/91V-g9H4fmL.jpg', rating: 9, completed: 'yes', likes: 0)
-  Book.create(name: 'The Beautiful and Damned', author: 'F Scott Fitzgerald', img_url: 'https://i.pinimg.com/736x/8f/95/8d/8f958de634d5242000ed3054b0b0a224--f-scott-fitzgerald-zelda-fitzgerald.jpg', rating: 7, completed: 'yes', likes: 0)
-  Book.create(name: 'Peter Pan', author: 'JM Barrie', img_url: 'https://images-na.ssl-images-amazon.com/images/I/51f-7KjjFeL._SX317_BO1,204,203,200_.jpg', rating: 8.5, completed: 'yes', likes: 0)
+  Book.create(name: 'The Beautiful and Damned', author: 'F Scott Fitzgerald', img_url: 'https://i.pinimg.com/736x/8f/95/8d/8f958de634d5242000ed3054b0b0a224--f-scott-fitzgerald-zelda-fitzgerald.jpg', rating: 7, completed: 'yes', likes: 5)
+  Book.create(name: 'Peter Pan', author: 'JM Barrie', img_url: 'https://images-na.ssl-images-amazon.com/images/I/51f-7KjjFeL._SX317_BO1,204,203,200_.jpg', rating: 8.5, completed: 'yes', likes: 5)

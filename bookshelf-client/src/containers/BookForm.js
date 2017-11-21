@@ -21,7 +21,7 @@ class BookForm extends Component {
   }
 
   render() {
-    const { name, author, img_url, rating, completed } = this.props.bookFormData
+    const { name, author, img_url, rating, completed, likes } = this.props.bookFormData
 
     return (
       <Element name="bookForm" className="element">
@@ -83,6 +83,7 @@ class BookForm extends Component {
                   value={completed}
                 />
               </div>
+              <input type="hidden" name="likes" value="likes" />
               <button type="submit" className="btn btn-default btn-sm buttons">Add</button>
             </form>
             <br/>

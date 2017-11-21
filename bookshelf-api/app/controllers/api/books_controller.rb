@@ -2,15 +2,8 @@ class Api::BooksController < ApplicationController
   before_action :set_book, only: [:show, :update, :destroy]
 
   def index
-    #@completed = Book.completed
     render json: Book.all
   end
-
-  def completed
-    #@completed = Book.completed
-    #render json: @completed
-  end
-
 
   def create
     book = Book.new(book_params)
@@ -49,11 +42,6 @@ class Api::BooksController < ApplicationController
     else
       render json: { message: "book deleted", success: 'ok'}
     end
-   #if @book.destroy
-    # render json: { message: "Deleted" }
-   #else
-    # render json: { errors: { message: "The Book Failed to Destroy" }}
-   #end
   end
 
   private

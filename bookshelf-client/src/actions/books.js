@@ -96,9 +96,15 @@ export function deleteBook(id) {
     }
   }
 
+function liking(book) {
+  const like = book.likes
+  like + 1
+  return like
+}
+
   export function addLikes(book) {
      return (dispatch) => {
-       dispatch({ type: 'ADD_LIKES' })
+       dispatch({ type: 'ADD_LIKE' })
        return fetch(`${API_URL}/books/${book.id}`, {
          method:'PATCH',
          headers: {
@@ -106,12 +112,13 @@ export function deleteBook(id) {
            'Content-Type': 'application/json'
          },
          body: JSON.stringify({
-           likes: book.likes + 1
+           likes: book.likes
          })
        })
        .then((res) => res.json())
-       .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_ADDED_LIKE', payload: responseJson })
-       return responseJson
+       .then(book => {
+         dispatch({ type: 'SUCCESSFULLY_ADDED_LIKE', book })
+
        })
      }
    }

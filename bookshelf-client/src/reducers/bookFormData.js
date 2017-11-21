@@ -3,7 +3,8 @@ const initialState = {
   author: '',
   img_url: '',
   rating: 0,
-  completed: ''
+  completed: '',
+  likes: 0
 }
 
 export default (state = initialState, action) => {
