@@ -25,7 +25,6 @@ class Books extends Component {
 
  onInputChange(event) {
    let newlyDisplayed = this.props.books.filter(book => book.name.toLowerCase().includes(event.target.value.toLowerCase()))
-   
    this.setState({
      searchTerm: event.target.value,
      currentlyDisplayed: newlyDisplayed
