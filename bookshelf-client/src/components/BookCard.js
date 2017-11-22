@@ -26,7 +26,7 @@ class BookCard extends Component {
   }
 
  render() {
-   const { book, handleSubmit, key } = this.props
+   const { book, handleSubmit } = this.props
 
    return (
      <div key={book.id} className="media book-card">
@@ -38,7 +38,7 @@ class BookCard extends Component {
        </h3>
        <p>Author: <span className="links">{book.author.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})}</span></p>
        <p>Rating: {book.rating}/10 • Completed: {book.completed}</p>
-       <p>	&#128077; {book.likes} <button className="btn btn-sm buttons like-button" type="edit" value={book.likes} onClick={this.handleClick.bind(this)}> Like</button></p>
+       <p><span role="img">👍</span> {book.likes} <button className="btn btn-sm buttons like-button" type="edit" value={book.likes} onClick={this.handleClick.bind(this)}> Like</button></p>
      </div>
    )
  }
