@@ -99,7 +99,7 @@ export function deleteBook(id) {
            'Content-Type': 'application/json'
          },
          body: JSON.stringify({
-           likes: book.likes
+           likes: book.likes + 1
          })
        })
        .then((res) => res.json())

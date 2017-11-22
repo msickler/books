@@ -37,7 +37,7 @@ class Books extends Component {
    this.props.actions.deleteBook(id)
    this.setState({id: ''})
  }
- 
+
   componentDidMount() {
     this.props.actions.getBooks()
     this.setState({ currentlyDisplayed: this.props.books })
@@ -60,9 +60,10 @@ class Books extends Component {
               </div>
               <div className="row books-container">
                 { (this.state.searchTerm === '') ?
-                  this.props.books.sort((a,b) => a.name.localeCompare(b.name))
+
+                  this.props.books.sort((a,b) => b.likes - a.likes)
                     .map(book => <BookCard key={book.id} book={book} likes={this.state.likes} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete} />) :
-                  this.state.currentlyDisplayed.sort((a,b) => a.name.localeCompare(b.name))
+                  this.state.currentlyDisplayed.sort((a,b) => a.likes - b.likes)
                     .map(book => <BookCard key={book.id} book={book} id={book.id} store={this.props.store} handleSubmit={this.handleOnDelete} />) }
                 <br />
               </div>
