@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BookCard from '../components/BookCard';
+import BookCard from './BookCard';
 import BookOpen from '../components/BookOpen';
 import BookForm from './BookForm';
 import BookDelete from './BookDelete';
@@ -37,9 +37,7 @@ class Books extends Component {
    this.props.actions.deleteBook(id)
    this.setState({id: ''})
  }
-
-
-
+ 
   componentDidMount() {
     this.props.actions.getBooks()
     this.setState({ currentlyDisplayed: this.props.books })

@@ -1,7 +1,7 @@
 import React, { Component }  from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import BookCard from '../components/BookCard';
+import BookCard from './BookCard';
 import * as actions from '../actions/books.js';
 import { bindActionCreators } from 'redux';
 

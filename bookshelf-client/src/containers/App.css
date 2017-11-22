@@ -118,19 +118,22 @@
 }
 
 .like-button {
-  background-color: #fafafa !important;
-  color: #919191 !important;
+  background-color: #f4f4f4 !important;
+  color: #8e8e8e !important;
   font-family: 'VT323', monospace;
   text-transform: none;
   font-size: 13px;
   font-weight: lighter !important;
-  border-radius: 3px !important;
-  padding: 1px !important;
+  border-radius: 5px !important;
+  border-color: #d8d8d8 !important;
+  padding: 0 3px !important;
+  margin-right: 5px;
+  vertical-align: text-bottom;
 }
 
 .like-button:hover {
   color: #444 !important;
-  border-color: #fff !important;
+  background-color: #fafafa !important;
 }
 
 .about {

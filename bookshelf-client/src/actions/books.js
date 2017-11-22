@@ -20,13 +20,6 @@ export const getBooks = () => {
   }
 }
 
-export const increment = (key)  => {
-  return {
-    type: 'INCREMENT_LIKES',
-    key
-  }
-}
-
 const addBook = book => {
   return {
     type: 'CREATE_BOOK_SUCCESS',

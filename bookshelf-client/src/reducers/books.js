@@ -1,6 +1,3 @@
-const ADD_LIKE = 'ADD_LIKE';
-export const addLike = (id) => ({type:ADD_LIKE, id});
-
 export default (state = [], action) => {
   switch(action.type) {
 
@@ -10,13 +7,13 @@ export default (state = [], action) => {
     case 'GET_BOOKS_SUCCESS':
       return action.books
 
-    case 'INCREMENT_LIKES':
-      const i = action.id
-      return [
-        ...state.slice(0, i),
-        {...state[i], likes: state[i].likes + 1 },
-        ...state.slice(i + 1),
-      ]
+    //case 'INCREMENT_LIKES':
+    //  const i = action.id
+    //  return [
+    //    ...state.slice(0, i),
+    //    {...state[i], likes: state[i].likes + 1 },
+    //    ...state.slice(i + 1),
+    //  ]
 
     case 'CREATE_BOOK_SUCCESS':
       return state.concat(action.book)
@@ -33,14 +30,11 @@ export default (state = [], action) => {
     case 'SUCCESSFULLY_EDITED_BOOK':
       return action.payload
 
-      case 'ADD_LIKE':
-        //state = state.map(book => book.id === action.id ? { ...book, likes: book.likes+1 } : book)
-        return state
+    case 'ADD_LIKE':
+      return state
 
-      case 'SUCCESSFULLY_ADDED_LIKE':
+    case 'SUCCESSFULLY_ADDED_LIKE':
       return action.payload
-        //const newProps = Object.assign({}, this.props, this.state)
-        //return newProps
 
     default:
       return state;
