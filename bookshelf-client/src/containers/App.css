@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Crimson+Text|Reenie+Beanie');
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
 
 .App {
   text-align: center;
@@ -115,31 +117,20 @@
   border-color: #fff !important;
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
+.like-button {
+  background-color: #fafafa !important;
+  color: #919191 !important;
+  font-family: 'VT323', monospace;
+  text-transform: none;
+  font-size: 13px;
+  font-weight: lighter !important;
+  border-radius: 3px !important;
+  padding: 1px !important;
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 100px;
-    background-color: #fafafa;
-    font-variant: small-caps;
-    color: #777;
-    text-align: center;
-    border-radius: 3px;
-    padding: 1px 0;
-
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    left: 50%;
-    margin-left: -50px;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+.like-button:hover {
+  color: #444 !important;
+  border-color: #fff !important;
 }
 
 .about {

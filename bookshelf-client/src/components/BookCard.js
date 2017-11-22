@@ -3,36 +3,25 @@ import { Link } from 'react-router-dom';
 import * as actions from '../actions/books.js';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {Like} from './Like'
-
 
 class BookCard extends Component {
   constructor(props) {
    super(props)
 
    this.state = {
-     counter: 0,
      likes: this.props.likes || 0
    }
  }
 
-  //handleClick = (event) => {
-  //  let book = this.props
-  //  var newLike = this.state.likes
-  //  this.setState({ counter: this.state.counter + 1,
-  //    likes: newLike + 1
-  //    })
-    //this.props.actions.addLikes(book)
-  //  book['likes'] = this.state.likes
-  //  }
   handleClick = event => {
     const bookAttributes = {id: this.props.id}
-    if (this.props.likes === 0 || this.props.likes > 0) {this.state.likes = this.props.likes + 1}
-    bookAttributes['likes'] = this.state.likes + 1
+
+    if (this.props.book.likes >= 0) {this.state.likes = this.props.book.likes + 1}
+    bookAttributes['likes'] = this.state.likes
 
     this.props.actions.addLikes(bookAttributes)
     this.setState({
-      likes: this.state.likes + 1
+      likes: this.state.likes
     })
   }
 
@@ -49,11 +38,7 @@ class BookCard extends Component {
        </h3>
        <p>Author: <span className="links">{book.author.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})}</span></p>
        <p>Rating: {book.rating}/10 • Completed: {book.completed}</p>
-       <p>Likes: {book.likes} : {this.state.likes} counter: {this.state.counter}</p>
-       <button className="btn btn-default btn-sm buttons" type="edit" value={book.id} onClick={this.handleClick.bind(this)}>Like</button>
-       Try:
-        <Like book={book}/>
-       <br />
+       <p>	&#128077; {book.likes} <button className="btn btn-sm buttons like-button" type="edit" value={book.likes} onClick={this.handleClick.bind(this)}> Like</button></p>
      </div>
    )
  }
