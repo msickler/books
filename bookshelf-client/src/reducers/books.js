@@ -34,11 +34,13 @@ export default (state = [], action) => {
       return action.payload
 
       case 'ADD_LIKE':
-        state = state.map(book => book.id === action.id ? { ...book, likes: book.likes+1 } : book)
+        //state = state.map(book => book.id === action.id ? { ...book, likes: book.likes+1 } : book)
         return state
 
       case 'SUCCESSFULLY_ADDED_LIKE':
-        return state.concat(action.book)
+      return action.payload
+        //const newProps = Object.assign({}, this.props, this.state)
+        //return newProps
 
     default:
       return state;

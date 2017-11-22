@@ -11,14 +11,29 @@ class BookCard extends Component {
    super(props)
 
    this.state = {
-     counter: 0
+     counter: 0,
+     likes: this.props.likes || 0
    }
  }
 
-  handleClick = (event) => {
-    let book = this.props
-    this.setState({ counter: this.state.counter + 1  })
-    this.props.actions.addLikes(book)
+  //handleClick = (event) => {
+  //  let book = this.props
+  //  var newLike = this.state.likes
+  //  this.setState({ counter: this.state.counter + 1,
+  //    likes: newLike + 1
+  //    })
+    //this.props.actions.addLikes(book)
+  //  book['likes'] = this.state.likes
+  //  }
+  handleClick = event => {
+    const bookAttributes = {id: this.props.id}
+    if (this.props.likes === 0 || this.props.likes > 0) {this.state.likes = this.props.likes + 1}
+    bookAttributes['likes'] = this.state.likes + 1
+
+    this.props.actions.addLikes(bookAttributes)
+    this.setState({
+      likes: this.state.likes + 1
+    })
   }
 
  render() {
@@ -34,7 +49,7 @@ class BookCard extends Component {
        </h3>
        <p>Author: <span className="links">{book.author.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})}</span></p>
        <p>Rating: {book.rating}/10 • Completed: {book.completed}</p>
-       <p>Likes: {book.likes} : {this.state.counter}</p>
+       <p>Likes: {book.likes} : {this.state.likes} counter: {this.state.counter}</p>
        <button className="btn btn-default btn-sm buttons" type="edit" value={book.id} onClick={this.handleClick.bind(this)}>Like</button>
        Try:
         <Like book={book}/>
@@ -48,4 +63,8 @@ function mapDispatchToProps(dispatch) {
   return {actions: bindActionCreators(actions, dispatch)}
 }
 
- export default connect(null, mapDispatchToProps)(BookCard);
+const mapStateToProps = (state) => {
+  return ({ books: state.books })
+}
+
+ export default connect(mapStateToProps, mapDispatchToProps)(BookCard);

@@ -96,12 +96,6 @@ export function deleteBook(id) {
     }
   }
 
-function liking(book) {
-  const like = book.likes
-  like + 1
-  return like
-}
-
   export function addLikes(book) {
      return (dispatch) => {
        dispatch({ type: 'ADD_LIKE' })
@@ -116,9 +110,8 @@ function liking(book) {
          })
        })
        .then((res) => res.json())
-       .then(book => {
-         dispatch({ type: 'SUCCESSFULLY_ADDED_LIKE', book })
-
+       .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_ADDED_LIKE', payload: responseJson })
+       return responseJson
        })
      }
    }

@@ -27,7 +27,6 @@ function mapDispatchToProps(dispatch) {
   return {addLike: bindActionCreators(addLike, dispatch)
           }
 }
-//set props
 const mapStateToProps = (state, ownProps) => ({books : state.books});
 
 Like = connect(mapStateToProps, mapDispatchToProps)(Like)
